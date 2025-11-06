@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oakroot Website - Sample</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Three.js Canvas for 3D scene -->
+    <canvas id="three-canvas"></canvas>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section style="min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <h1 class="animate-text">Welcome to Oakroot</h1>
+            <p class="animate-paragraph">Modern website with Three.js and GSAP animations</p>
+        </section>
+
+        <!-- Scroll Animation Examples -->
+        <section style="min-height: 100vh; padding: 5rem 0;">
+            <div class="fade-in-on-scroll" style="background: #f5f5f5; padding: 3rem; margin: 2rem 0;">
+                <h2>Fade In on Scroll</h2>
+                <p>This section fades in when you scroll to it.</p>
+            </div>
+
+            <div class="slide-in-left" style="background: #e0e0e0; padding: 3rem; margin: 2rem 0;">
+                <h2>Slide In from Left</h2>
+                <p>This section slides in from the left side.</p>
+            </div>
+
+            <div class="slide-in-right" style="background: #f0f0f0; padding: 3rem; margin: 2rem 0;">
+                <h2>Slide In from Right</h2>
+                <p>This section slides in from the right side.</p>
+            </div>
+
+            <div class="parallax-element" style="background: #d0d0d0; padding: 5rem; margin: 2rem 0; text-align: center;">
+                <h2>Parallax Effect</h2>
+                <p>This section has a parallax scrolling effect.</p>
+            </div>
+        </section>
+
+        <!-- More Content for Scrolling -->
+        <section style="min-height: 100vh; padding: 5rem 0;">
+            <h2 class="fade-in-on-scroll">More Content</h2>
+            <p class="fade-in-on-scroll">Scroll down to see more animations.</p>
+        </section>
+    </div>
+
+    <!-- Load bundled JavaScript -->
+    <script src="dist/bundle.js"></script>
+</body>
+</html>
+
