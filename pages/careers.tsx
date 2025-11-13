@@ -66,7 +66,7 @@ export default function CareersPage() {
               <h2 className="text-4xl font-bold mb-6">Why Work With Us?</h2>
               <p className="text-lg text-neutral-600 mb-4">
                 At Oakroot, we believe in creating an environment where talented individuals can 
-                thrive, grow, and do their best work. We're committed to fostering creativity, 
+                thrive, grow, and do their best work. We&apos;re committed to fostering creativity, 
                 innovation, and collaboration.
               </p>
               <p className="text-lg text-neutral-600">
@@ -140,11 +140,11 @@ export default function CareersPage() {
 
           {/* General Application */}
           <div className="bg-neutral-50 rounded-lg p-12 mb-16">
-            <h2 className="text-4xl font-bold mb-4">Don't See a Match?</h2>
+            <h2 className="text-4xl font-bold mb-4">Don&apos;t See a Match?</h2>
             <p className="text-lg text-neutral-600 mb-6">
-              We're always looking for talented individuals. Even if you don't see a position 
-              that matches your skills, we'd love to hear from you. Send us your resume and 
-              let us know how you'd like to contribute to our team.
+              We&apos;re always looking for talented individuals. Even if you don&apos;t see a position 
+              that matches your skills, we&apos;d love to hear from you. Send us your resume and 
+              let us know how you&apos;d like to contribute to our team.
             </p>
             <Link
               href="/contact"
@@ -158,7 +158,7 @@ export default function CareersPage() {
           <div className="bg-black text-white rounded-lg p-12 text-center">
             <h2 className="text-4xl font-bold mb-4">Ready to Join Us?</h2>
             <p className="text-xl text-neutral-300 mb-8">
-              Let's discuss how you can contribute to our team and grow your career with Oakroot.
+              Let&apos;s discuss how you can contribute to our team and grow your career with Oakroot.
             </p>
             <Link
               href="/contact"

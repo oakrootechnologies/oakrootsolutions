@@ -16,7 +16,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto mb-16">
           <h1 className="text-6xl md:text-8xl font-bold mb-6">About Us</h1>
           <p className="text-xl text-neutral-600 max-w-3xl">
-            We're your creative partner, here to grow your business, solve challenges, and elevate 
+            We&apos;re your creative partner, here to grow your business, solve challenges, and elevate 
             your brand with lasting impact.
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function AboutPage() {
               <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
               <p className="text-lg text-neutral-600 mb-4">
                 At Oakroot, we believe in elevating brands through creative strategy and 
-                conversion-focused marketing. We're not just another agency—we're your 
+                conversion-focused marketing. We&apos;re not just another agency—we&apos;re your 
                 partners in growth.
               </p>
               <p className="text-lg text-neutral-600">
@@ -75,7 +75,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-xl font-bold mb-3">Excellence</h3>
                 <p className="text-neutral-600">
-                  We're committed to delivering the highest quality work in everything we do.
+                  We&apos;re committed to delivering the highest quality work in everything we do.
                 </p>
               </div>
               <div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
           <div className="bg-black text-white rounded-lg p-12 text-center">
             <h2 className="text-4xl font-bold mb-4">Ready to Work Together?</h2>
             <p className="text-xl text-neutral-300 mb-8">
-              Let's discuss how we can help elevate your brand and drive results.
+              Let&apos;s discuss how we can help elevate your brand and drive results.
             </p>
             <Link
               href="/contact"

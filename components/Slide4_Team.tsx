@@ -13,12 +13,12 @@ export default function Slide4_Team() {
             Join Us
           </h2>
           <p className="text-xl lg:text-2xl text-neutral-700 mb-8 leading-relaxed">
-            We're always looking for talented individuals who share our passion 
+            We&apos;re always looking for talented individuals who share our passion 
             for innovation and excellence. Join a team that values creativity, 
             collaboration, and continuous growth.
           </p>
           <p className="text-lg text-neutral-600 mb-8">
-            Together, we're building a future that honors the past while 
+            Together, we&apos;re building a future that honors the past while 
             embracing the possibilities of tomorrow.
           </p>
           <Link

@@ -138,10 +138,10 @@ export default function ContactForm() {
         <motion.div variants={itemVariants} className="mb-12">
           <h3 className="text-xl font-medium underline mb-4">Contact Form</h3>
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold">
-            Let's start a conversation.
+            Let&apos;s start a conversation.
           </h2>
           <p className="text-lg text-neutral-600 mt-6 max-w-2xl">
-            Tell us about your project and we'll get back to you as soon as possible.
+            Tell us about your project and we&apos;ll get back to you as soon as possible.
           </p>
         </motion.div>
 
@@ -393,7 +393,7 @@ export default function ContactForm() {
                 animate={{ opacity: 1, y: 0 }}
                 className="mt-4 text-green-600 text-sm"
               >
-                Thank you! We'll get back to you soon.
+                Thank you! We&apos;ll get back to you soon.
               </motion.p>
             )}
             {submitStatus === 'error' && (

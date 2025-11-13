@@ -22,12 +22,12 @@ export default function Slide2_Images() {
           Our Story
         </h2>
         <p className="text-lg lg:text-xl text-neutral-700 leading-relaxed">
-          Founded with a vision to bridge innovation and tradition, we've built 
+          Founded with a vision to bridge innovation and tradition, we&apos;ve built 
           a legacy of excellence that spans decades. Our journey began with a 
           simple belief: that the best solutions honor both the future and the past.
         </p>
         <p className="text-lg lg:text-xl text-neutral-700 leading-relaxed">
-          Through years of dedication, we've transformed challenges into 
+          Through years of dedication, we&apos;ve transformed challenges into 
           opportunities, always staying true to our core values of integrity, 
           innovation, and excellence.
         </p>

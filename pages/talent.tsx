@@ -105,7 +105,7 @@ export default function TalentPage() {
               <div>
                 <h3 className="text-xl font-bold mb-3">Client-Focused</h3>
                 <p className="text-neutral-600">
-                  Your success is our priority. We're committed to understanding your needs and 
+                  Your success is our priority. We&apos;re committed to understanding your needs and 
                   delivering solutions that drive results.
                 </p>
               </div>
@@ -116,7 +116,7 @@ export default function TalentPage() {
           <div className="bg-black text-white rounded-lg p-12 text-center">
             <h2 className="text-4xl font-bold mb-4">Join Our Team</h2>
             <p className="text-xl text-neutral-300 mb-8">
-              Are you a talented designer, developer, or strategist? We're always looking for 
+              Are you a talented designer, developer, or strategist? We&apos;re always looking for 
               exceptional people to join our team.
             </p>
             <Link

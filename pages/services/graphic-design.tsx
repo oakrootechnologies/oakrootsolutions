@@ -81,7 +81,7 @@ export default function GraphicDesignPage() {
           <div className="bg-black text-white rounded-lg p-12 text-center">
             <h2 className="text-4xl font-bold mb-4">Ready to Elevate Your Visuals?</h2>
             <p className="text-xl text-neutral-300 mb-8">
-              Let's create stunning designs that communicate your message and make an impact.
+              Let&apos;s create stunning designs that communicate your message and make an impact.
             </p>
             <Link
               href="/contact"

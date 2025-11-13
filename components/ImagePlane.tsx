@@ -41,12 +41,13 @@ export default function ImagePlane({
   }, []);
 
   return (
+    // eslint-disable-next-line jsx-a11y/alt-text
     <Image
       ref={meshRef}
       url={url}
       position={[x, yOffset, z]}
       rotation={rotation}
-      scale={[4, 3, 1]} // Wider than tall
+      scale={[4, 3]} // Wider than tall
     />
   );
 }

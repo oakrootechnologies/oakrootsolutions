@@ -82,7 +82,7 @@ export default function VideoPhotoPage() {
           <div className="bg-black text-white rounded-lg p-12 text-center">
             <h2 className="text-4xl font-bold mb-4">Ready to Tell Your Story?</h2>
             <p className="text-xl text-neutral-300 mb-8">
-              Let's create compelling video and photo content that engages your audience and drives results.
+              Let&apos;s create compelling video and photo content that engages your audience and drives results.
             </p>
             <Link
               href="/contact"

@@ -39,7 +39,7 @@ export default function Ring({
           count={imageUrls.length}
           radius={radius}
           url={url}
-          tiltAngle={tiltAngle}
+          yOffset={0}
         />
       ))}
     </group>

@@ -12,7 +12,6 @@ export default function LenisProvider({ children }: LenisProviderProps) {
     // Initialize Lenis with smooth scroll settings
     const lenis = new Lenis({
       lerp: 0.1, // Controls the 'damping' or 'hot knife' effect (lower = more dampened)
-      smoothTouch: true, // Apply smooth scroll on mobile/touch devices
       smoothWheel: true, // Smooth scroll on mouse wheel
     });
 
