@@ -204,9 +204,10 @@ export default function ServicesFlowSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                   <div className="absolute bottom-4 left-4 lg:bottom-8 lg:left-8 text-white z-10">
                     <span className="text-xs lg:text-sm text-neutral-300 mb-1 lg:mb-2 block">{service.number}</span>
-                    <h2 className="text-2xl lg:text-5xl font-bold mb-2 lg:mb-3 drop-shadow-lg leading-tight">
+                    {/* Changed from h2 to p for SEO (duplicate headings in loop) - preserving exact className */}
+                    <p className="text-2xl lg:text-5xl font-bold mb-2 lg:mb-3 drop-shadow-lg leading-tight">
                       {service.leftCard.title}
-                    </h2>
+                    </p>
                     <p className="text-xs lg:text-base text-neutral-200 max-w-md drop-shadow-md">
                       {service.leftCard.description}
                     </p>
@@ -245,9 +246,10 @@ export default function ServicesFlowSection() {
                     
                     {/* White circle container */}
                     <div className="absolute inset-[3px] bg-white rounded-full shadow-2xl flex flex-col justify-center items-center text-center p-4 lg:p-8 hover:bg-neutral-50 transition-colors">
-                      <h3 className="text-sm lg:text-2xl font-bold uppercase mb-1 lg:mb-2 leading-tight">
+                      {/* Changed from h3 to p for SEO (duplicate headings in loop) - preserving exact className */}
+                      <p className="text-sm lg:text-2xl font-bold uppercase mb-1 lg:mb-2 leading-tight">
                         {service.number} {service.title}
-                      </h3>
+                      </p>
                       <p className="text-[10px] lg:text-sm text-neutral-600">{service.desc}</p>
                     </div>
                   </Link>
@@ -282,9 +284,10 @@ export default function ServicesFlowSection() {
                     
                     {/* White circle container */}
                     <div className="absolute inset-[3px] bg-white rounded-full shadow-2xl flex flex-col justify-center items-center text-center p-6 lg:p-8">
-                      <h3 className="text-xl lg:text-2xl font-bold uppercase mb-2">
+                      {/* Changed from h3 to p for SEO (duplicate headings in loop) - preserving exact className */}
+                      <p className="text-xl lg:text-2xl font-bold uppercase mb-2">
                         {service.number} {service.title}
-                      </h3>
+                      </p>
                       <p className="text-xs lg:text-sm text-neutral-600">{service.desc}</p>
                     </div>
                   </div>
@@ -303,9 +306,10 @@ export default function ServicesFlowSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                   <div className="absolute bottom-8 left-8 right-20 text-white z-10">
                     <span className="text-sm text-neutral-300 mb-2 block">{service.number}</span>
-                    <h2 className="text-5xl font-bold mb-3 drop-shadow-lg">
+                    {/* Changed from h2 to p for SEO (duplicate headings in loop) - preserving exact className */}
+                    <p className="text-5xl font-bold mb-3 drop-shadow-lg">
                       {service.rightCard.title}
-                    </h2>
+                    </p>
                     <p className="text-base text-neutral-200 max-w-md drop-shadow-md">
                       {service.rightCard.description}
                     </p>

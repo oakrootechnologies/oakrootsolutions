@@ -11,6 +11,8 @@ interface Project {
   category: string;
   mainImageUrl: string;
   ringImageUrl: string;
+  externalUrl?: string;
+  isFeatured?: boolean;
 }
 
 interface ProjectImagePlaneProps {
@@ -56,6 +58,13 @@ export default function ProjectImagePlane({
     }
   });
 
+  // Handle click to open external URL
+  const handleClick = () => {
+    if (project.externalUrl) {
+      window.open(project.externalUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <group ref={groupRef} position={[x, 0, z]}>
       {/* eslint-disable-next-line jsx-a11y/alt-text */}
@@ -70,6 +79,8 @@ export default function ProjectImagePlane({
         onPointerOut={() => {
           setHoveredProject?.(null);
         }}
+        onClick={handleClick}
+        style={{ cursor: project.externalUrl ? 'pointer' : 'default' }}
       />
     </group>
   );

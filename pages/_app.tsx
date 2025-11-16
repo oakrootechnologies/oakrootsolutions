@@ -29,6 +29,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://oakrootsolutions.com/" />
+        
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://oakrootsolutions.com/" />
@@ -37,16 +40,45 @@ export default function App({ Component, pageProps }: AppProps) {
           property="og:description"
           content="As your all-in-one digital partner, Oakroot Solutions combines creative strategy, development, and AI to elevate brands and drive conversion-focused growth."
         />
+        <meta property="og:image" content="https://oakrootsolutions.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         
         {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://oakrootsolutions.com/" />
-        <meta property="twitter:title" content="Oakroot Solutions - Digital Growth Engine" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://oakrootsolutions.com/" />
+        <meta name="twitter:title" content="Oakroot Solutions - Digital Growth Engine" />
         <meta
-          property="twitter:description"
+          name="twitter:description"
           content="As your all-in-one digital partner, Oakroot Solutions combines creative strategy, development, and AI to elevate brands and drive conversion-focused growth."
         />
+        <meta name="twitter:image" content="https://oakrootsolutions.com/og-image.png" />
       </Head>
+      
+      {/* Organization JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Oakroot Solutions',
+            url: 'https://oakrootsolutions.com/',
+            logo: 'https://oakrootsolutions.com/logo.png',
+            '@id': 'https://oakrootsolutions.com/',
+            sameAs: [
+              'https://linkedin.com/company/oakroot-solutions',
+              'https://twitter.com/oakrootsolutions',
+              'https://instagram.com/oakrootsolutions',
+            ],
+            contactPoint: {
+              '@type': 'ContactPoint',
+              telephone: '+919202212290',
+              contactType: 'Customer Service',
+            },
+          }),
+        }}
+      />
       
       {/* LocalBusiness JSON-LD Schema */}
       <script
@@ -56,7 +88,7 @@ export default function App({ Component, pageProps }: AppProps) {
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
             name: 'Oakroot Solutions',
-            image: 'https://oakrootsolutions.com/logo-url.png',
+            image: 'https://oakrootsolutions.com/logo.png',
             '@id': 'https://oakrootsolutions.com/',
             url: 'https://oakrootsolutions.com/',
             telephone: '+919202212290',

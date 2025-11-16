@@ -34,7 +34,8 @@ export default function ServiceItem({ title, description, href, index = 0, isInV
 
   const content = (
     <>
-      <motion.h3
+      {/* Changed from h3 to p for SEO (duplicate headings in loop) - preserving exact className */}
+      <motion.p
         className="text-xl lg:text-3xl font-medium underline relative"
         animate={{
           scale: isHovered ? 1.02 : 1,
@@ -45,7 +46,7 @@ export default function ServiceItem({ title, description, href, index = 0, isInV
         }}
       >
         {title}
-      </motion.h3>
+      </motion.p>
       <motion.p
         className="text-sm lg:text-lg text-neutral-600 ml-2 lg:ml-4"
         animate={{

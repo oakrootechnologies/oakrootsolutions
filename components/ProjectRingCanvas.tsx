@@ -12,6 +12,8 @@ interface Project {
   category: string;
   mainImageUrl: string;
   ringImageUrl: string;
+  externalUrl?: string;
+  isFeatured?: boolean;
 }
 
 interface Category {
@@ -27,12 +29,52 @@ interface ProjectRingCanvasProps {
   centered?: boolean; // If true, center the canvas; if false, allow left shift for homepage
 }
 
-// Generate mock project data (23 items)
-const generateMockProjects = (): Project[] => {
+// Featured projects with live URLs
+const featuredProjects: Project[] = [
+  {
+    id: 'restworld',
+    title: 'Restworld',
+    category: 'E-commerce',
+    isFeatured: true,
+    mainImageUrl: 'https://picsum.photos/seed/restworld/800/600',
+    ringImageUrl: 'https://picsum.photos/seed/restworld-ring/800/400',
+    externalUrl: 'https://restworld.in/',
+  },
+  {
+    id: 'wittywealth',
+    title: 'Witty Wealth',
+    category: 'Fintech',
+    isFeatured: true,
+    mainImageUrl: 'https://picsum.photos/seed/wittywealth/800/600',
+    ringImageUrl: 'https://picsum.photos/seed/wittywealth-ring/800/400',
+    externalUrl: 'https://wittywealth.org/',
+  },
+  {
+    id: 'ideaascend',
+    title: 'Idea Ascend',
+    category: 'Startup Platform',
+    isFeatured: true,
+    mainImageUrl: 'https://picsum.photos/seed/ideaascend/800/600',
+    ringImageUrl: 'https://picsum.photos/seed/ideaascend-ring/800/400',
+    externalUrl: 'https://ideaascend.in/',
+  },
+  {
+    id: 'oksingreen',
+    title: 'Oksingreen',
+    category: 'Horticulture',
+    isFeatured: true,
+    mainImageUrl: 'https://picsum.photos/seed/oksingreen/800/600',
+    ringImageUrl: 'https://picsum.photos/seed/oksingreen-ring/800/400',
+    externalUrl: 'https://oksingreen.com/',
+  },
+];
+
+// Generate additional mock project data to fill the ring (19 more items to total 23)
+const generateAdditionalProjects = (): Project[] => {
   const categories = ['Architecture', 'Interior', 'Landscape', 'Urban', 'Residential', 'Commercial'];
   const projects: Project[] = [];
   
-  for (let i = 0; i < 23; i++) {
+  for (let i = 0; i < 19; i++) {
     const category = categories[i % categories.length];
     projects.push({
       id: `project-${i}`,
@@ -44,6 +86,11 @@ const generateMockProjects = (): Project[] => {
   }
   
   return projects;
+};
+
+// Combine featured and additional projects
+const generateMockProjects = (): Project[] => {
+  return [...featuredProjects, ...generateAdditionalProjects()];
 };
 
 // Mock category data with 3D positions
