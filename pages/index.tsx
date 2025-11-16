@@ -1,19 +1,36 @@
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 import AnimatedTextHero from '@/components/AnimatedTextHero';
 import BrandStrip from '@/components/BrandStrip';
 import HeroSection from '@/components/HeroSection';
-import ServicesFlowSection from '@/components/ServicesFlowSection';
 import OurServicesSection from '@/components/OurServicesSection';
-import TiltedMarquee from '@/components/TiltedMarquee';
 import OurClientsSection from '@/components/OurClientsSection';
-import TestimonialsSlider from '@/components/TestimonialsSlider';
+
+// Lazy load heavy components for better performance
+const ServicesFlowSection = dynamic(() => import('@/components/ServicesFlowSection'), {
+  ssr: true,
+  loading: () => <div className="w-full h-[500px] bg-white" />,
+});
+
+const TiltedMarquee = dynamic(() => import('@/components/TiltedMarquee'), {
+  ssr: true,
+  loading: () => <div className="w-full h-[200px] bg-white" />,
+});
+
+const TestimonialsSlider = dynamic(() => import('@/components/TestimonialsSlider'), {
+  ssr: true,
+  loading: () => <div className="w-full h-[600px] bg-white" />,
+});
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Oakroot - Creative Strategy & Conversion-Focused Marketing</title>
-        <meta name="description" content="Elevating brands through creative strategy and conversion-focused marketing" />
+        <title>Oakroot Solutions - Digital Growth Engine</title>
+        <meta
+          name="description"
+          content="Elevating brands through creative strategy and conversion-focused marketing. Oakroot Solutions is your all-in-one digital partner for growth."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

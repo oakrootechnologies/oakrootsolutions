@@ -6,8 +6,11 @@ export default function AboutPage() {
   return (
     <>
       <Head>
-        <title>About Us - Oakroot</title>
-        <meta name="description" content="Learn about Oakroot Solutions - Elevating brands through creative strategy and conversion-focused marketing." />
+        <title>About Us | Oakroot Solutions</title>
+        <meta
+          name="description"
+          content="Learn about Oakroot Solutions - Elevating brands through creative strategy and conversion-focused marketing. Discover our mission, values, and what we do."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 

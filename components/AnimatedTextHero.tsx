@@ -71,22 +71,22 @@ export default function AnimatedTextHero() {
           className="w-full px-4 py-8 md:py-12"
         >
           {/* Desktop/Tablet Version - 2 lines */}
-          <h1 className="hidden md:block text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-center text-black leading-tight">
+          <h2 className="hidden md:block text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-center text-black leading-tight">
             <div className="flex flex-col items-center gap-2">
               <div className="whitespace-nowrap">{heroTextLine1}</div>
               <div className="whitespace-nowrap">{heroTextLine2}</div>
             </div>
-          </h1>
+          </h2>
 
           {/* Mobile Version - 4 lines */}
-          <h1 className="md:hidden text-2xl sm:text-3xl font-bold text-center text-black leading-tight">
+          <h2 className="md:hidden text-2xl sm:text-3xl font-bold text-center text-black leading-tight">
             <div className="flex flex-col items-center gap-1">
               <div>{heroTextMobile1}</div>
               <div>{heroTextMobile2}</div>
               <div>{heroTextMobile3}</div>
               <div>{heroTextMobile4}</div>
             </div>
-          </h1>
+          </h2>
         </motion.div>
 
         {/* Video Player - Large size with margin */}

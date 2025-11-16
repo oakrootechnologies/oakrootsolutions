@@ -23,8 +23,11 @@ export default function ContactPage() {
   return (
     <>
       <Head>
-        <title>Contact - Oakroot</title>
-        <meta name="description" content="Get in touch with Oakroot Solutions" />
+        <title>Contact Us | Oakroot Solutions</title>
+        <meta
+          name="description"
+          content="Get in touch with Oakroot Solutions to start your digital growth project today. Contact us for creative strategy, development, and AI solutions."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
