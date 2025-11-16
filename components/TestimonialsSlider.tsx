@@ -60,7 +60,7 @@ const testimonials: Testimonial[] = [
     ],
     quote:
       'Working with Oakroot was a game-changer for our business. They delivered exceptional results and exceeded all our expectations.',
-    author: 'Rahul Jain, CEO at wittywealth Finacial services.',
+    author: 'Rahul Jain, CEO at wittywealth Financial services.',
     stats: [
       { value: '#3', description: 'Top 3 Agency in the Region' },
       { value: '150%', description: 'ROI increase in first quarter' },

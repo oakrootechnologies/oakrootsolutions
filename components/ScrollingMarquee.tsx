@@ -88,17 +88,24 @@ export default function ScrollingMarquee() {
           }}
         >
           {/* Render the cards twice for seamless loop */}
-          {duplicatedCards.map((card, index) => (
-            <div key={`${card.id}-${index}`} className="flex-shrink-0 mx-2 sm:mx-4">
-              <ServiceCard
-                id={card.id}
-                title={card.title}
-                imageUrl={card.imageUrl}
-                horizontal={true}
-                href={card.href}
-              />
-            </div>
-          ))}
+          {duplicatedCards.map((card, index) => {
+            // For SEO: Only the first instance of each unique card should use h3
+            // The first set of cards (index < serviceCards.length) are the original instances
+            const isFirstInstance = index < serviceCards.length;
+            
+            return (
+              <div key={`${card.id}-${index}`} className="flex-shrink-0 mx-2 sm:mx-4">
+                <ServiceCard
+                  id={card.id}
+                  title={card.title}
+                  imageUrl={card.imageUrl}
+                  horizontal={true}
+                  href={card.href}
+                  index={isFirstInstance ? 0 : 1}
+                />
+              </div>
+            );
+          })}
         </motion.div>
       </div>
     </div>

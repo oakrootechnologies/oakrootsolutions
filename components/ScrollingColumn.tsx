@@ -38,15 +38,22 @@ export default function ScrollingColumn({ cards, reverse = false }: ScrollingCol
         ease: 'linear',
       }}
     >
-      {duplicatedCards.map((card, index) => (
-        <ServiceCard
-          key={`${card.id}-${index}`}
-          id={card.id}
-          title={card.title}
-          imageUrl={card.imageUrl}
-          href={card.href}
-        />
-      ))}
+      {duplicatedCards.map((card, index) => {
+        // For SEO: Only the first instance of each unique card should use h3
+        // The first set of cards (index < cards.length) are the original instances
+        const isFirstInstance = index < cards.length;
+        
+        return (
+          <ServiceCard
+            key={`${card.id}-${index}`}
+            id={card.id}
+            title={card.title}
+            imageUrl={card.imageUrl}
+            href={card.href}
+            index={isFirstInstance ? 0 : 1}
+          />
+        );
+      })}
     </motion.div>
   );
 }
