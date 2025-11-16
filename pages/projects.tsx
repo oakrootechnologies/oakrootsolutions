@@ -10,8 +10,8 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Oakroot</title>
-        <meta name="description" content="Explore our portfolio of creative projects" />
+        <title>Projects | Oakroot Solutions</title>
+        <meta name="description" content="Explore our portfolio of creative projects and digital solutions. See how Oakroot Solutions elevates brands through innovative design and development." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <ProjectRingPage />

@@ -22,15 +22,15 @@ const values = [
 
 export default function Slide3_Values() {
   return (
-    <div className="w-screen h-screen flex-shrink-0 flex items-center justify-center gap-8 p-8 lg:p-16 bg-white">
-      <div className="max-w-7xl mx-auto w-full">
-        <h2 className="text-5xl lg:text-7xl font-bold uppercase text-black mb-16 text-center">
+    <div className="w-screen h-screen flex-shrink-0 flex items-center justify-center gap-4 lg:gap-8 p-4 lg:p-16 bg-white overflow-y-auto">
+      <div className="max-w-7xl mx-auto w-full py-8 lg:py-0">
+        <h2 className="text-3xl lg:text-7xl font-bold uppercase text-black mb-8 lg:mb-16 text-center">
           Our Values
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {values.map((value, index) => (
-            <div key={index} className="flex flex-col gap-4">
+            <div key={index} className="flex flex-col gap-3 lg:gap-4">
               <div className="aspect-[3/4] relative overflow-hidden rounded-lg">
                 <Image
                   src={value.imageUrl}
@@ -40,10 +40,10 @@ export default function Slide3_Values() {
                   unoptimized
                 />
               </div>
-              <h3 className="text-3xl font-bold text-black uppercase">
+              <h3 className="text-xl lg:text-3xl font-bold text-black uppercase">
                 {value.title}
               </h3>
-              <p className="text-neutral-700 leading-relaxed">
+              <p className="text-sm lg:text-base text-neutral-700 leading-relaxed">
                 {value.description}
               </p>
             </div>

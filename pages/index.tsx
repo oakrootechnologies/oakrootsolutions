@@ -63,7 +63,7 @@ export default function Home() {
         <TestimonialsSlider />
 
         {/* Spacer for scrolling demonstration */}
-        <div className="h-screen bg-white"></div>
+        <div className="h-[50vh] lg:h-screen bg-white"></div>
       </div>
     </>
   );

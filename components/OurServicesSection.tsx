@@ -93,11 +93,11 @@ export default function OurServicesSection() {
   return (
     <section 
       ref={sectionRef}
-      className="w-full bg-white text-black px-8 lg:px-16 py-24 overflow-x-hidden"
+      className="w-full bg-white text-black px-4 lg:px-16 py-12 lg:py-24 overflow-x-hidden"
     >
       {/* Section Grid */}
       <motion.div
-        className="grid grid-cols-1 lg:grid-cols-2 gap-16"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16"
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
         variants={containerVariants}
@@ -105,20 +105,20 @@ export default function OurServicesSection() {
         {/* Left Column (Titles) */}
         <div>
           {/* Section Number */}
-          <motion.h3
+          <motion.h2
             variants={titleVariants}
             className="text-xl font-medium underline"
           >
             Our Services
-          </motion.h3>
+          </motion.h2>
           
           {/* Main Heading */}
-          <motion.h2
+          <motion.p
             variants={headingVariants}
-            className="text-7xl lg:text-8xl font-bold mt-8"
+            className="text-4xl lg:text-8xl font-bold mt-4 lg:mt-8 leading-tight"
           >
             We build your entire digital ecosystem.
-          </motion.h2>
+          </motion.p>
         </div>
 
         {/* Right Column (Services List) */}

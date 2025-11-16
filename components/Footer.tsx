@@ -21,23 +21,23 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-black text-white px-8 lg:px-16 pt-24 pb-12">
+    <footer className="w-full bg-black text-white px-4 py-12 lg:px-16 lg:pt-24 lg:pb-12">
       {/* Top Section Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 lg:mb-16">
         {/* Brand Column (Column 1) - Spans 2 columns on large screens */}
         <div className="lg:col-span-2">
           {/* Logo */}
-          <h2 className="text-3xl font-bold text-white">OAKROOT</h2>
+          <h2 className="text-2xl lg:text-3xl font-bold text-white">OAKROOT</h2>
           
           {/* Slogan */}
-          <p className="mt-6 text-lg text-neutral-300 max-w-sm">
+          <p className="mt-4 lg:mt-6 text-base lg:text-lg text-neutral-300 max-w-sm">
             Elevating Brands Through Creative Strategy & Conversion-Focused Marketing
           </p>
 
           {/* Demo Button */}
           <Link
             href="/contact"
-            className="mt-8 inline-block bg-white text-black font-semibold rounded-full py-3 px-8 hover:bg-neutral-100 transition-colors"
+            className="mt-6 lg:mt-8 inline-block bg-white text-black font-semibold rounded-full py-2.5 px-6 lg:py-3 lg:px-8 hover:bg-neutral-100 transition-colors text-sm lg:text-base"
           >
             Book a Demo
           </Link>

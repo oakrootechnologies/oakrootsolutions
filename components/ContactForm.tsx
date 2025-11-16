@@ -131,16 +131,16 @@ export default function ContactForm() {
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
       variants={containerVariants}
-      className="w-full bg-white text-black py-16 md:py-24"
+      className="w-full bg-white text-black py-8 lg:py-24 px-4 lg:px-0"
     >
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
-        <motion.div variants={itemVariants} className="mb-12">
-          <h3 className="text-xl font-medium underline mb-4">Contact Form</h3>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold">
+        <motion.div variants={itemVariants} className="mb-8 lg:mb-12">
+          <h3 className="text-base lg:text-xl font-medium underline mb-3 lg:mb-4">Contact Form</h3>
+          <h2 className="text-3xl lg:text-7xl font-bold leading-tight">
             Let&apos;s start a conversation.
           </h2>
-          <p className="text-lg text-neutral-600 mt-6 max-w-2xl">
+          <p className="text-sm lg:text-lg text-neutral-600 mt-4 lg:mt-6 max-w-2xl">
             Tell us about your project and we&apos;ll get back to you as soon as possible.
           </p>
         </motion.div>
@@ -149,10 +149,10 @@ export default function ContactForm() {
         <motion.form
           variants={itemVariants}
           onSubmit={handleSubmit}
-          className="space-y-8"
+          className="space-y-6 lg:space-y-8"
         >
           {/* Name and Email Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
             {/* Name Field */}
             <motion.div
               variants={itemVariants}
@@ -173,7 +173,7 @@ export default function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-transparent border-b-2 border-gray-300 focus:border-black outline-none transition-all duration-300 text-lg placeholder:text-gray-400 focus:placeholder:text-gray-500"
+                className="w-full px-4 py-2.5 lg:py-3 bg-transparent border-b-2 border-gray-300 focus:border-black outline-none transition-all duration-300 text-base lg:text-lg placeholder:text-gray-400 focus:placeholder:text-gray-500"
                 placeholder="Your full name"
               />
             </motion.div>
@@ -198,7 +198,7 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-transparent border-b-2 border-gray-300 focus:border-black outline-none transition-all duration-300 text-lg placeholder:text-gray-400 focus:placeholder:text-gray-500"
+                className="w-full px-4 py-2.5 lg:py-3 bg-transparent border-b-2 border-gray-300 focus:border-black outline-none transition-all duration-300 text-base lg:text-lg placeholder:text-gray-400 focus:placeholder:text-gray-500"
                 placeholder="your.email@example.com"
               />
             </motion.div>
@@ -307,7 +307,7 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               rows={6}
-              className="w-full px-4 py-3 bg-transparent border-b-2 border-gray-300 focus:border-black outline-none transition-all duration-300 text-lg resize-none placeholder:text-gray-400 focus:placeholder:text-gray-500"
+              className="w-full px-4 py-2.5 lg:py-3 bg-transparent border-b-2 border-gray-300 focus:border-black outline-none transition-all duration-300 text-base lg:text-lg resize-none placeholder:text-gray-400 focus:placeholder:text-gray-500"
               placeholder="Describe your business, product, goals, and what you're looking to achieve..."
             />
           </motion.div>
@@ -319,7 +319,7 @@ export default function ContactForm() {
               disabled={isSubmitting}
               whileHover={{ scale: 1.02, x: 2 }}
               whileTap={{ scale: 0.98 }}
-              className="group relative px-8 py-4 bg-black text-white font-medium text-lg overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+              className="group relative px-6 py-3 lg:px-8 lg:py-4 bg-black text-white font-medium text-sm lg:text-lg overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
             >
               <motion.span
                 key={submitStatus}

@@ -33,23 +33,23 @@ export default function CareersPage() {
   return (
     <>
       <Head>
-        <title>Careers - Oakroot</title>
-        <meta name="description" content="Join the Oakroot team - We're always looking for talented individuals to join our creative team." />
+        <title>Careers | Oakroot Solutions</title>
+        <meta name="description" content="Join the Oakroot Solutions team - We're always looking for talented designers, developers, and strategists to join our creative team in Indore." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <main className="bg-white text-black px-8 lg:px-16 py-24">
+      <main className="bg-white text-black px-4 lg:px-16 py-12 lg:py-24">
         {/* Hero Section */}
-        <div className="max-w-6xl mx-auto mb-16">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6">Careers</h1>
-          <p className="text-xl text-neutral-600 max-w-3xl">
+        <div className="max-w-6xl mx-auto mb-8 lg:mb-16">
+          <h1 className="text-4xl lg:text-8xl font-bold mb-4 lg:mb-6 leading-tight">Careers</h1>
+          <p className="text-base lg:text-xl text-neutral-600 max-w-3xl">
             Join our team of creative professionals and help us elevate brands through innovative 
             design and strategic marketing.
           </p>
         </div>
 
         {/* Main Image */}
-        <div className="w-full aspect-video relative overflow-hidden rounded-lg mb-16">
+        <div className="w-full aspect-video relative overflow-hidden rounded-lg mb-8 lg:mb-16">
           <Image
             src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=675&fit=crop"
             alt="Careers at Oakroot"
@@ -61,23 +61,23 @@ export default function CareersPage() {
 
         {/* Content Sections */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-8 lg:mb-16">
             <div>
-              <h2 className="text-4xl font-bold mb-6">Why Work With Us?</h2>
-              <p className="text-lg text-neutral-600 mb-4">
+              <h2 className="text-2xl lg:text-4xl font-bold mb-4 lg:mb-6">Why Work With Us?</h2>
+              <p className="text-base lg:text-lg text-neutral-600 mb-3 lg:mb-4">
                 At Oakroot, we believe in creating an environment where talented individuals can 
                 thrive, grow, and do their best work. We&apos;re committed to fostering creativity, 
                 innovation, and collaboration.
               </p>
-              <p className="text-lg text-neutral-600">
+              <p className="text-base lg:text-lg text-neutral-600">
                 Join a team that values your expertise, supports your growth, and celebrates 
                 your achievements. We offer competitive benefits, flexible work arrangements, 
                 and opportunities to work on exciting projects with leading brands.
               </p>
             </div>
             <div>
-              <h2 className="text-4xl font-bold mb-6">What We Offer</h2>
-              <ul className="space-y-4 text-lg text-neutral-600">
+              <h2 className="text-2xl lg:text-4xl font-bold mb-4 lg:mb-6">What We Offer</h2>
+              <ul className="space-y-3 lg:space-y-4 text-base lg:text-lg text-neutral-600">
                 <li className="flex items-start">
                   <span className="font-bold mr-3">•</span>
                   <span>Competitive salary and benefits</span>
@@ -107,8 +107,8 @@ export default function CareersPage() {
           </div>
 
           {/* Open Positions */}
-          <div className="mb-16">
-            <h2 className="text-4xl font-bold mb-8">Open Positions</h2>
+          <div className="mb-8 lg:mb-16">
+            <h2 className="text-2xl lg:text-4xl font-bold mb-6 lg:mb-8">Open Positions</h2>
             <div className="space-y-4">
               {openPositions.map((position, index) => (
                 <div
@@ -139,30 +139,30 @@ export default function CareersPage() {
           </div>
 
           {/* General Application */}
-          <div className="bg-neutral-50 rounded-lg p-12 mb-16">
-            <h2 className="text-4xl font-bold mb-4">Don&apos;t See a Match?</h2>
-            <p className="text-lg text-neutral-600 mb-6">
+          <div className="bg-neutral-50 rounded-lg p-6 lg:p-12 mb-8 lg:mb-16">
+            <h2 className="text-2xl lg:text-4xl font-bold mb-3 lg:mb-4">Don&apos;t See a Match?</h2>
+            <p className="text-base lg:text-lg text-neutral-600 mb-4 lg:mb-6">
               We&apos;re always looking for talented individuals. Even if you don&apos;t see a position 
               that matches your skills, we&apos;d love to hear from you. Send us your resume and 
               let us know how you&apos;d like to contribute to our team.
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-black text-white font-semibold rounded-full py-3 px-8 hover:bg-neutral-800 transition-colors"
+              className="inline-block bg-black text-white font-semibold rounded-full py-2.5 px-6 lg:py-3 lg:px-8 hover:bg-neutral-800 transition-colors text-sm lg:text-base"
             >
               Send Your Resume
             </Link>
           </div>
 
           {/* CTA Section */}
-          <div className="bg-black text-white rounded-lg p-12 text-center">
-            <h2 className="text-4xl font-bold mb-4">Ready to Join Us?</h2>
-            <p className="text-xl text-neutral-300 mb-8">
+          <div className="bg-black text-white rounded-lg p-6 lg:p-12 text-center">
+            <h2 className="text-2xl lg:text-4xl font-bold mb-3 lg:mb-4">Ready to Join Us?</h2>
+            <p className="text-base lg:text-xl text-neutral-300 mb-6 lg:mb-8">
               Let&apos;s discuss how you can contribute to our team and grow your career with Oakroot.
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-white text-black font-semibold rounded-full py-3 px-8 hover:bg-neutral-100 transition-colors"
+              className="inline-block bg-white text-black font-semibold rounded-full py-2.5 px-6 lg:py-3 lg:px-8 hover:bg-neutral-100 transition-colors text-sm lg:text-base"
             >
               Get in Touch
             </Link>

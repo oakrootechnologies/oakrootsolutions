@@ -35,7 +35,7 @@ export default function ServiceItem({ title, description, href, index = 0, isInV
   const content = (
     <>
       <motion.h3
-        className="text-3xl font-medium underline relative"
+        className="text-xl lg:text-3xl font-medium underline relative"
         animate={{
           scale: isHovered ? 1.02 : 1,
         }}
@@ -47,7 +47,7 @@ export default function ServiceItem({ title, description, href, index = 0, isInV
         {title}
       </motion.h3>
       <motion.p
-        className="text-lg text-neutral-600 ml-4"
+        className="text-sm lg:text-lg text-neutral-600 ml-2 lg:ml-4"
         animate={{
           opacity: isHovered ? 1 : 0.8,
           x: isHovered ? 4 : 0,

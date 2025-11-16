@@ -14,7 +14,7 @@ export default function ContentColumn() {
 
       {/* Paragraph */}
       <p className="text-gray-600 text-base sm:text-lg max-w-lg mb-6 sm:mb-8">
-        As your creative partner, we&apos;re your all-in-one destination for creative services—here to grow your business, solve challenges, and elevate your brand with lasting impact.
+        As your creative partner, we&apos;re your all-in-one destination for creative services—here to grow your business, solve challenges, and elevate your brand with lasting impact. We offer comprehensive <Link href="/services/branding" className="underline hover:text-gray-800">Branding</Link>, <Link href="/services/web-design" className="underline hover:text-gray-800">Website Development</Link>, <Link href="/services/digital-marketing" className="underline hover:text-gray-800">Digital Marketing</Link>, and <Link href="/services/app-development" className="underline hover:text-gray-800">AI Automations</Link> solutions.
       </p>
 
       {/* Button Container */}

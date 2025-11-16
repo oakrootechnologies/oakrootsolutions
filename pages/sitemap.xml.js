@@ -14,6 +14,7 @@ function generateSiteMap() {
     '/projects',
     '/talent',
     '/careers',
+    '/indore',
     '/services/web-design',
     '/services/digital-marketing',
     '/services/app-development',

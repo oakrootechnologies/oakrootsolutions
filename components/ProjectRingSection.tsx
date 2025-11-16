@@ -12,7 +12,7 @@ const ProjectRingCanvas = dynamic(() => import('./ProjectRingCanvas'), {
 
 export default function ProjectRingSection() {
   return (
-    <section className="w-full h-screen relative bg-white overflow-x-hidden">
+    <section className="w-full h-[60vh] lg:h-screen relative bg-white overflow-x-hidden">
       <div className="relative h-full w-full">
         {/* Canvas - Full width and height, allows overflow for ring visibility */}
         <div className="absolute inset-0 w-full h-full" style={{ overflow: 'visible' }}>
@@ -20,17 +20,17 @@ export default function ProjectRingSection() {
         </div>
 
         {/* Text Column - Overlay on top */}
-        <div className="relative z-10 flex flex-col justify-between h-full p-8 lg:p-16 pointer-events-none">
+        <div className="relative z-10 flex flex-col justify-between h-full p-4 lg:p-16 pointer-events-none">
           <div className="pointer-events-auto">
             {/* Top Text */}
-            <p className="text-black text-3xl lg:text-4xl xl:text-5xl font-medium max-w-md">
+            <p className="text-black text-lg lg:text-4xl xl:text-5xl font-medium max-w-md leading-tight">
               Our central mission: to be the all-in-one partner for elevating brands through technology.
             </p>
           </div>
 
           <div className="pointer-events-auto">
             {/* Bottom Text */}
-            <p className="text-black text-xl lg:text-2xl max-w-md">
+            <p className="text-black text-sm lg:text-2xl max-w-md">
               Combining creative strategy with technical expertise, we take our clients&apos; challenges and transform them into conversion-focused solutions that drive real-world growth.
             </p>
           </div>

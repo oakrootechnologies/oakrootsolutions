@@ -1,13 +1,23 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { Inter } from 'next/font/google';
 import Layout from '@/components/Layout';
 import Preloader from '@/components/Preloader';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 
+// Optimize fonts with next/font to eliminate layout shifts
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+  preload: true,
+});
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <LanguageProvider>
+    <div className={inter.variable}>
+      <LanguageProvider>
       <Head>
         {/* Sitewide Meta Tags */}
         <title>Oakroot Solutions - Digital Growth Engine</title>
@@ -71,6 +81,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </Layout>
     </LanguageProvider>
+    </div>
   );
 }
 

@@ -103,6 +103,7 @@ export default function AnimatedTextHero() {
               loop
               muted
               playsInline
+              poster="/videos/hero-video-poster.jpg"
             >
               <source src="/videos/hero-video.mp4" type="video/mp4" />
               Your browser does not support the video tag.

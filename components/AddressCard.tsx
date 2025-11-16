@@ -17,14 +17,14 @@ export default function AddressCard({ city, address, mapLink }: AddressCardProps
 
   return (
     <div className="flex flex-col">
-      <h3 className="text-xl font-bold mb-2">{city}</h3>
-      <p className="text-gray-600 mb-4 whitespace-pre-line">{address}</p>
+      <h3 className="text-lg lg:text-xl font-bold mb-2">{city}</h3>
+      <p className="text-sm lg:text-base text-gray-600 mb-3 lg:mb-4 whitespace-pre-line">{address}</p>
       {mapLink && (
         <a
           href={mapLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-black font-medium hover:underline underline-offset-4 transition-all"
+          className="text-black font-medium hover:underline underline-offset-4 transition-all text-sm lg:text-base"
         >
           View map +
         </a>

@@ -50,7 +50,7 @@ export default function VisualColumn() {
   const secondColumn = [mockServiceCards[1], mockServiceCards[3], mockServiceCards[5]];
 
   return (
-    <div className="relative h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden">
+    <div className="relative h-[400px] sm:h-[500px] lg:h-[800px] overflow-hidden">
       {/* Mask gradient for fade effect at top and bottom */}
       <div
         className="absolute inset-0 pointer-events-none z-10"

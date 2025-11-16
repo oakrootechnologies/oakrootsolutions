@@ -170,13 +170,13 @@ export default function ServicesFlowSection() {
   const currentService = servicesData[selectedIndex];
 
   return (
-    <section className="w-full bg-white text-black py-24 px-8 relative overflow-x-hidden">
+    <section className="w-full bg-white text-black py-12 px-4 lg:py-24 lg:px-8 relative overflow-x-hidden">
       {/* Static Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+      <div className="text-center max-w-3xl mx-auto mb-8 lg:mb-16">
+        <h2 className="text-3xl lg:text-6xl font-bold mb-4 lg:mb-6 leading-tight">
           Elite Talent, Unmatched Creativity
         </h2>
-        <p className="text-lg text-neutral-600">
+        <p className="text-base lg:text-lg text-neutral-600">
           We bring together the best minds in design and development to create
           digital experiences that elevate your brand and drive results.
         </p>
@@ -189,25 +189,25 @@ export default function ServicesFlowSection() {
             {servicesData.map((service) => (
               <div
                 key={service.id}
-                className="flex-[0_0_90vw] lg:flex-[0_0_85vw] xl:flex-[0_0_75vw] flex items-center justify-center gap-4 lg:gap-6 relative"
+                className="flex-[0_0_90vw] lg:flex-[0_0_85vw] xl:flex-[0_0_75vw] flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 relative"
               >
                 {/* Left Card - Horizontal Rectangular */}
-                <div className="w-[42%] lg:w-[44%] rounded-3xl overflow-hidden aspect-[5/4] relative">
+                <div className="w-full lg:w-[44%] rounded-2xl lg:rounded-3xl overflow-hidden aspect-[5/4] relative">
                   <Image
                     src={service.leftCard.imageUrl}
                     alt={service.leftCard.title}
                     fill
                     className="object-cover"
-                    sizes="40vw"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
                     unoptimized={service.leftCard.imageUrl.includes('unsplash.com')}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                  <div className="absolute bottom-8 left-8 text-white z-10">
-                    <span className="text-sm text-neutral-300 mb-2 block">{service.number}</span>
-                    <h2 className="text-4xl lg:text-5xl font-bold mb-3 drop-shadow-lg">
+                  <div className="absolute bottom-4 left-4 lg:bottom-8 lg:left-8 text-white z-10">
+                    <span className="text-xs lg:text-sm text-neutral-300 mb-1 lg:mb-2 block">{service.number}</span>
+                    <h2 className="text-2xl lg:text-5xl font-bold mb-2 lg:mb-3 drop-shadow-lg leading-tight">
                       {service.leftCard.title}
                     </h2>
-                    <p className="text-sm lg:text-base text-neutral-200 max-w-md drop-shadow-md">
+                    <p className="text-xs lg:text-base text-neutral-200 max-w-md drop-shadow-md">
                       {service.leftCard.description}
                     </p>
                   </div>
@@ -215,7 +215,7 @@ export default function ServicesFlowSection() {
 
                 {/* Central Circle - Overlapping both cards */}
                 {service.href ? (
-                  <Link href={service.href} className="absolute left-1/2 -translate-x-1/2 w-56 h-56 lg:w-72 lg:h-72 flex-shrink-0 z-30 cursor-pointer">
+                  <Link href={service.href} className="absolute left-1/2 -translate-x-1/2 w-40 h-40 lg:w-72 lg:h-72 flex-shrink-0 z-30 cursor-pointer">
                     {/* Yellow rotating half circumference SVG */}
                     <motion.svg
                       className="absolute inset-0 w-full h-full"
@@ -244,15 +244,15 @@ export default function ServicesFlowSection() {
                     </motion.svg>
                     
                     {/* White circle container */}
-                    <div className="absolute inset-[3px] bg-white rounded-full shadow-2xl flex flex-col justify-center items-center text-center p-6 lg:p-8 hover:bg-neutral-50 transition-colors">
-                      <h3 className="text-xl lg:text-2xl font-bold uppercase mb-2">
+                    <div className="absolute inset-[3px] bg-white rounded-full shadow-2xl flex flex-col justify-center items-center text-center p-4 lg:p-8 hover:bg-neutral-50 transition-colors">
+                      <h3 className="text-sm lg:text-2xl font-bold uppercase mb-1 lg:mb-2 leading-tight">
                         {service.number} {service.title}
                       </h3>
-                      <p className="text-xs lg:text-sm text-neutral-600">{service.desc}</p>
+                      <p className="text-[10px] lg:text-sm text-neutral-600">{service.desc}</p>
                     </div>
                   </Link>
                 ) : (
-                  <div className="absolute left-1/2 -translate-x-1/2 w-56 h-56 lg:w-72 lg:h-72 flex-shrink-0 z-30">
+                  <div className="absolute left-1/2 -translate-x-1/2 w-40 h-40 lg:w-72 lg:h-72 flex-shrink-0 z-30">
                     {/* Yellow rotating half circumference SVG */}
                     <motion.svg
                       className="absolute inset-0 w-full h-full"
@@ -291,7 +291,7 @@ export default function ServicesFlowSection() {
                 )}
 
                 {/* Right Card - Horizontal Rectangular */}
-                <div className="w-[42%] lg:w-[44%] rounded-3xl overflow-hidden aspect-[5/4] relative">
+                <div className="hidden lg:block w-[44%] rounded-3xl overflow-hidden aspect-[5/4] relative">
                   <Image
                     src={service.rightCard.imageUrl}
                     alt={service.rightCard.title}
@@ -301,12 +301,12 @@ export default function ServicesFlowSection() {
                     unoptimized={service.rightCard.imageUrl.includes('unsplash.com')}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                  <div className="absolute bottom-8 left-8 right-16 lg:right-20 text-white z-10">
+                  <div className="absolute bottom-8 left-8 right-20 text-white z-10">
                     <span className="text-sm text-neutral-300 mb-2 block">{service.number}</span>
-                    <h2 className="text-4xl lg:text-5xl font-bold mb-3 drop-shadow-lg">
+                    <h2 className="text-5xl font-bold mb-3 drop-shadow-lg">
                       {service.rightCard.title}
                     </h2>
-                    <p className="text-sm lg:text-base text-neutral-200 max-w-md drop-shadow-md">
+                    <p className="text-base text-neutral-200 max-w-md drop-shadow-md">
                       {service.rightCard.description}
                     </p>
                   </div>

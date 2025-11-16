@@ -75,7 +75,7 @@ export default function TestimonialsSlider() {
   );
 
   return (
-    <section className="w-full bg-white text-black py-24 px-8">
+    <section className="w-full bg-white text-black py-12 px-4 lg:py-24 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Embla Viewport */}
         <div className="overflow-hidden" ref={emblaRef}>
