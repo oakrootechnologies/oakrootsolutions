@@ -26,10 +26,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Oakroot Solutions - Digital Growth Engine</title>
+        <title>Oakroot Solutions – The Best for Your Business</title>
         <meta
           name="description"
-          content="Elevating brands through creative strategy and conversion-focused marketing. Oakroot Solutions is your all-in-one digital partner for growth."
+          content="Oakroot Solutions – The Best for Your Business. We help brands grow with creative strategy, performance marketing, and world-class digital execution."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

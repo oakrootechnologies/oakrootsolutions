@@ -5,11 +5,7 @@ export default function ContentColumn() {
     <div className="flex flex-col justify-center">
       {/* Heading */}
       <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight">
-        Elevating Brands{' '}
-        <span className="font-light">Through</span>
-        <br />
-        Creative Strategy &<br />
-        Conversion-Focused Marketing
+        Oakroot Solutions – The Best for Your Business
       </h1>
 
       {/* Paragraph */}

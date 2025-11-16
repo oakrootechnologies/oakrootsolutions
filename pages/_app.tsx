@@ -20,10 +20,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <LanguageProvider>
       <Head>
         {/* Sitewide Meta Tags */}
-        <title>Oakroot Solutions - Digital Growth Engine</title>
+        <title>Oakroot Solutions – The Best for Your Business</title>
         <meta
           name="description"
-          content="As your all-in-one digital partner, Oakroot Solutions combines creative strategy, development, and AI to elevate brands and drive conversion-focused growth."
+          content="Oakroot Solutions – The Best for Your Business. We help brands grow with creative strategy, performance marketing, and world-class digital execution."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -35,10 +35,10 @@ export default function App({ Component, pageProps }: AppProps) {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://oakrootsolutions.com/" />
-        <meta property="og:title" content="Oakroot Solutions - Digital Growth Engine" />
+        <meta property="og:title" content="Oakroot Solutions – The Best for Your Business" />
         <meta
           property="og:description"
-          content="As your all-in-one digital partner, Oakroot Solutions combines creative strategy, development, and AI to elevate brands and drive conversion-focused growth."
+          content="Oakroot Solutions – The Best for Your Business. We help brands grow with creative strategy, performance marketing, and world-class digital execution."
         />
         <meta property="og:image" content="https://oakrootsolutions.com/og-image.png" />
         <meta property="og:image:width" content="1200" />
@@ -47,10 +47,10 @@ export default function App({ Component, pageProps }: AppProps) {
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://oakrootsolutions.com/" />
-        <meta name="twitter:title" content="Oakroot Solutions - Digital Growth Engine" />
+        <meta name="twitter:title" content="Oakroot Solutions – The Best for Your Business" />
         <meta
           name="twitter:description"
-          content="As your all-in-one digital partner, Oakroot Solutions combines creative strategy, development, and AI to elevate brands and drive conversion-focused growth."
+          content="Oakroot Solutions – The Best for Your Business. We help brands grow with creative strategy, performance marketing, and world-class digital execution."
         />
         <meta name="twitter:image" content="https://oakrootsolutions.com/og-image.png" />
       </Head>
@@ -64,6 +64,7 @@ export default function App({ Component, pageProps }: AppProps) {
             '@type': 'Organization',
             name: 'Oakroot Solutions',
             url: 'https://oakrootsolutions.com/',
+            slogan: 'The Best for Your Business',
             logo: 'https://oakrootsolutions.com/logo.png',
             '@id': 'https://oakrootsolutions.com/',
             sameAs: [
