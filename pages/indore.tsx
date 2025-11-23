@@ -81,7 +81,7 @@ export default function IndorePage() {
         {/* Services Section */}
         <div className="max-w-6xl mx-auto mb-8 lg:mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold mb-6 lg:mb-8">Our Services in Indore</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
             <div className="p-6 lg:p-8 border border-gray-200 rounded-lg hover:border-black transition-colors">
               <h3 className="text-xl lg:text-2xl font-bold mb-3 lg:mb-4">
                 <Link href="/services/web-design" className="hover:underline">
@@ -177,7 +177,7 @@ export default function IndorePage() {
               </p>
               <Link
                 href="/contact"
-                className="inline-block bg-black text-white font-semibold rounded-full py-3 px-6 lg:px-8 hover:bg-gray-800 transition-colors text-sm lg:text-base"
+                className="inline-block bg-black text-white font-semibold rounded-full py-3 px-6 lg:px-8 hover:bg-gray-800 transition-colors text-sm lg:text-base min-h-[44px] flex items-center justify-center"
               >
                 Get Directions
               </Link>
@@ -208,7 +208,7 @@ export default function IndorePage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-black font-semibold rounded-full py-2.5 px-6 lg:py-3 lg:px-8 hover:bg-neutral-100 transition-colors text-sm lg:text-base"
+            className="inline-block bg-white text-black font-semibold rounded-full py-2.5 px-6 lg:py-3 lg:px-8 hover:bg-neutral-100 transition-colors text-sm lg:text-base min-h-[44px] flex items-center justify-center"
           >
             Schedule a Consultation
           </Link>

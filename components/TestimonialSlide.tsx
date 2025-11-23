@@ -50,7 +50,7 @@ export default function TestimonialSlide({ testimonial }: TestimonialSlideProps)
       <p className="mt-4 lg:mt-6 font-semibold text-black text-sm lg:text-base">{testimonial.author}</p>
 
       {/* Stats Row */}
-      <div className="flex flex-col md:flex-row gap-6 md:gap-16 mt-8 lg:mt-12">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-16 mt-8 lg:mt-12">
         {testimonial.stats.map((stat, index) => (
           <div key={index} className="flex flex-col items-center">
             {/* Stat Value - Changed from h2 to p for SEO (duplicate headings in loop) */}

@@ -28,7 +28,7 @@ export default function Slide3_Values() {
           Our Values
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {values.map((value, index) => (
             <div key={index} className="flex flex-col gap-3 lg:gap-4">
               <div className="aspect-[3/4] relative overflow-hidden rounded-lg">

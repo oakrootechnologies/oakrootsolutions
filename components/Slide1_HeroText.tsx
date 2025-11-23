@@ -22,7 +22,7 @@ export default function Slide1_HeroText() {
       {/* Main Content */}
       <div className="relative z-10 text-center max-w-7xl mx-auto px-4">
         {/* Main Heading */}
-        <h1 className="text-4xl md:text-6xl lg:text-[14rem] leading-none font-bold uppercase mb-4 lg:mb-8">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[14rem] leading-none font-bold uppercase mb-4 lg:mb-8">
           <span className="text-black">A future that honors</span>
           <br />
           <span className="text-orange-500">the past</span>

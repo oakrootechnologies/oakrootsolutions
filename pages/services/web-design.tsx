@@ -78,7 +78,7 @@ export default function WebDesignPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-white text-black font-semibold rounded-full py-2.5 px-6 lg:py-3 lg:px-8 hover:bg-neutral-100 transition-colors text-sm lg:text-base"
+              className="inline-block bg-white text-black font-semibold rounded-full py-2.5 px-6 lg:py-3 lg:px-8 hover:bg-neutral-100 transition-colors text-sm lg:text-base min-h-[44px] flex items-center justify-center"
             >
               Get Started
             </Link>

@@ -39,7 +39,7 @@ export default function MarqueeTrack({ isHovered }: MarqueeTrackProps) {
         {duplicatedContent.map((item, index) => (
           <span
             key={index}
-            className="text-6xl md:text-8xl font-black uppercase text-white px-4 md:px-8"
+            className="text-4xl sm:text-6xl lg:text-8xl font-black uppercase text-white px-4 lg:px-8"
           >
             {item}
           </span>

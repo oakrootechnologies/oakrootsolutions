@@ -152,7 +152,7 @@ export default function ContactForm() {
           className="space-y-6 lg:space-y-8"
         >
           {/* Name and Email Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
             {/* Name Field */}
             <motion.div
               variants={itemVariants}
@@ -319,7 +319,7 @@ export default function ContactForm() {
               disabled={isSubmitting}
               whileHover={{ scale: 1.02, x: 2 }}
               whileTap={{ scale: 0.98 }}
-              className="group relative px-6 py-3 lg:px-8 lg:py-4 bg-black text-white font-medium text-sm lg:text-lg overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+              className="group relative px-6 py-3 lg:px-8 lg:py-4 bg-black text-white font-medium text-sm lg:text-lg overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 min-h-[44px]"
             >
               <motion.span
                 key={submitStatus}

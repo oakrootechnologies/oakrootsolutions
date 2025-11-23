@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <footer className="w-full bg-black text-white px-4 py-12 lg:px-16 lg:pt-24 lg:pb-12">
       {/* Top Section Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 lg:mb-16">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 lg:mb-16">
         {/* Brand Column (Column 1) - Spans 2 columns on large screens */}
         <div className="lg:col-span-2">
           {/* Logo */}
@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Demo Button */}
           <Link
             href="/contact"
-            className="mt-6 lg:mt-8 inline-block bg-white text-black font-semibold rounded-full py-2.5 px-6 lg:py-3 lg:px-8 hover:bg-neutral-100 transition-colors text-sm lg:text-base"
+            className="mt-6 lg:mt-8 inline-block bg-white text-black font-semibold rounded-full py-2.5 px-6 lg:py-3 lg:px-8 hover:bg-neutral-100 transition-colors text-sm lg:text-base min-h-[44px] flex items-center justify-center"
           >
             Book a Demo
           </Link>
@@ -82,7 +82,7 @@ export default function Footer() {
       <div className="w-full border-t border-neutral-800" />
 
       {/* Sub-Footer */}
-      <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4 mt-8">
+      <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-4 mt-8">
         {/* Copyright Text */}
         <p className="text-sm text-neutral-400">
           © 2025 Oakroot Solutions. All rights reserved.

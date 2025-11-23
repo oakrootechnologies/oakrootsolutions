@@ -31,7 +31,7 @@ export default function TimelineBar({ sliderProgress }: TimelineBarProps) {
   const lines = Array.from({ length: lineCount }, (_, i) => i);
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 z-30 pb-8 px-8">
+    <div className="absolute bottom-0 left-0 right-0 z-30 pb-4 lg:pb-8 px-4 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Year Display */}
         <motion.div

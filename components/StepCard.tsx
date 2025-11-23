@@ -16,7 +16,7 @@ interface StepCardProps {
 export default function StepCard({ step, stepIndex, isActive }: StepCardProps) {
   return (
     <motion.div
-      className="min-h-[50vh] flex flex-col justify-center gap-6"
+      className="min-h-[50vh] flex flex-col justify-center gap-4 lg:gap-6"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
@@ -29,7 +29,7 @@ export default function StepCard({ step, stepIndex, isActive }: StepCardProps) {
       {/* Image */}
       {step.imageUrl && (
         <motion.div
-          className="w-full aspect-video relative overflow-hidden rounded-lg mb-4"
+          className="w-full aspect-video relative overflow-hidden rounded-lg mb-2 lg:mb-4"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: '-100px' }}
@@ -53,7 +53,7 @@ export default function StepCard({ step, stepIndex, isActive }: StepCardProps) {
       {/* Content */}
       <div>
         <motion.h3
-          className="text-2xl lg:text-3xl font-bold mb-4 text-black"
+          className="text-xl lg:text-3xl font-bold mb-2 lg:mb-4 text-black"
           animate={{
             color: isActive ? '#000000' : '#737373',
           }}
@@ -62,7 +62,7 @@ export default function StepCard({ step, stepIndex, isActive }: StepCardProps) {
           {step.title}
         </motion.h3>
         <motion.p
-          className="text-base lg:text-lg text-neutral-600 leading-relaxed max-w-2xl"
+          className="text-sm lg:text-lg text-neutral-600 leading-relaxed max-w-2xl"
           animate={{
             opacity: isActive ? 1 : 0.6,
           }}

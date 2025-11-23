@@ -68,7 +68,7 @@ export default function AboutPage() {
 
           <div className="bg-neutral-50 rounded-lg p-6 lg:p-12 mb-8 lg:mb-16">
             <h2 className="text-2xl lg:text-4xl font-bold mb-4 lg:mb-6">Our Values</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
               <div>
                 <h3 className="text-lg lg:text-xl font-bold mb-2 lg:mb-3">Creativity</h3>
                 <p className="text-sm lg:text-base text-neutral-600">
@@ -98,7 +98,7 @@ export default function AboutPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-white text-black font-semibold rounded-full py-2.5 px-6 lg:py-3 lg:px-8 hover:bg-neutral-100 transition-colors text-sm lg:text-base"
+              className="inline-block bg-white text-black font-semibold rounded-full py-2.5 px-6 lg:py-3 lg:px-8 hover:bg-neutral-100 transition-colors text-sm lg:text-base min-h-[44px] flex items-center justify-center"
             >
               Get in Touch
             </Link>

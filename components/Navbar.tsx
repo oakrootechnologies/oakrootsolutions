@@ -52,8 +52,8 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
             </motion.span>
           </Link>
 
-          {/* Desktop Nav Links - Hidden on mobile, visible from md */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          {/* Desktop Nav Links - Hidden on mobile, visible from lg */}
+          <div className="hidden lg:flex items-center gap-6 lg:gap-8">
             <Link
               href="/"
               className="relative group text-sm lg:text-base"
@@ -116,8 +116,8 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
             </Link>
           </div>
 
-          {/* Desktop Right Links - Hidden on mobile, visible from md */}
-          <div className="hidden md:flex items-center gap-4 lg:gap-6">
+          {/* Desktop Right Links - Hidden on mobile, visible from lg */}
+          <div className="hidden lg:flex items-center gap-4 lg:gap-6">
             <Link
               href="/contact"
               className="text-sm lg:text-base"
@@ -136,11 +136,12 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
             <LanguageSwitcher color={isScrolled ? '#000000' : '#ffffff'} />
           </div>
 
-          {/* Mobile Menu Trigger - Always visible on far right */}
+          {/* Mobile Menu Trigger - Visible on mobile, hidden on lg+ */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-sm"
+            className="lg:hidden text-sm min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Toggle navigation menu"
+            aria-expanded={isMobileMenuOpen}
           >
             <motion.span
               animate={{

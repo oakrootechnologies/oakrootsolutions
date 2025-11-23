@@ -115,7 +115,7 @@ export default function CareersPage() {
                   key={index}
                   className="border border-neutral-200 rounded-lg p-6 hover:border-black transition-colors"
                 >
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                     <div>
                       <h3 className="text-2xl font-bold mb-2">{position.title}</h3>
                       <div className="flex flex-wrap gap-4 text-neutral-600">
@@ -128,7 +128,7 @@ export default function CareersPage() {
                     </div>
                     <Link
                       href="/contact"
-                      className="inline-block bg-black text-white font-semibold rounded-full py-2 px-6 hover:bg-neutral-800 transition-colors whitespace-nowrap"
+                      className="inline-block bg-black text-white font-semibold rounded-full py-2 px-6 hover:bg-neutral-800 transition-colors whitespace-nowrap min-h-[44px] flex items-center justify-center"
                     >
                       Apply Now
                     </Link>
@@ -148,7 +148,7 @@ export default function CareersPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-black text-white font-semibold rounded-full py-2.5 px-6 lg:py-3 lg:px-8 hover:bg-neutral-800 transition-colors text-sm lg:text-base"
+              className="inline-block bg-black text-white font-semibold rounded-full py-2.5 px-6 lg:py-3 lg:px-8 hover:bg-neutral-800 transition-colors text-sm lg:text-base min-h-[44px] flex items-center justify-center"
             >
               Send Your Resume
             </Link>
@@ -162,7 +162,7 @@ export default function CareersPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-white text-black font-semibold rounded-full py-2.5 px-6 lg:py-3 lg:px-8 hover:bg-neutral-100 transition-colors text-sm lg:text-base"
+              className="inline-block bg-white text-black font-semibold rounded-full py-2.5 px-6 lg:py-3 lg:px-8 hover:bg-neutral-100 transition-colors text-sm lg:text-base min-h-[44px] flex items-center justify-center"
             >
               Get in Touch
             </Link>

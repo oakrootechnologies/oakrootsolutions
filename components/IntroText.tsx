@@ -17,7 +17,7 @@ export default function IntroText({ masterProgress }: IntroTextProps) {
       style={{ opacity }}
     >
       <motion.h1
-        className="text-[5rem] md:text-[8rem] lg:text-[10rem] font-bold uppercase text-black leading-none text-center px-8"
+        className="text-[3rem] sm:text-[5rem] md:text-[8rem] lg:text-[10rem] font-bold uppercase text-black leading-none text-center px-4 lg:px-8"
         style={{ scale }}
       >
         BUILDING THE FUTURE

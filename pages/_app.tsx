@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import '@/styles/components/cylinder-posters.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
@@ -19,6 +20,16 @@ export default function App({ Component, pageProps }: AppProps) {
     <div className={inter.variable}>
       <LanguageProvider>
       <Head>
+        {/* Performance: Preconnect to critical CDNs */}
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Add your CDN domain here when configured */}
+        {/* <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" /> */}
+        
+        {/* Performance: DNS prefetch for external resources */}
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        
         {/* Sitewide Meta Tags */}
         <title>Oakroot Solutions – The Best for Your Business</title>
         <meta

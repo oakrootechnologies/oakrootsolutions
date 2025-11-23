@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "ANALYZE=true next build",
+    "perf:check": "node scripts/perf-check.js",
+    "perf:lighthouse": "npx @lhci/cli autorun --collect.url=http://localhost:3000 --collect.settings.emulatedFormFactor=mobile"
   },
   "keywords": [
     "nextjs",

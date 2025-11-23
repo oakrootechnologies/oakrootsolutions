@@ -31,8 +31,9 @@ export default function FAQSection({ title, faqs }: FAQSectionProps) {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full text-left flex justify-between items-center py-4 hover:text-gray-700 transition-colors"
+                className="w-full text-left flex justify-between items-center py-4 hover:text-gray-700 transition-colors min-h-[44px]"
                 aria-expanded={openIndex === index}
+                aria-label={openIndex === index ? `Close ${faq.question}` : `Open ${faq.question}`}
               >
                 <h3 className="text-lg lg:text-xl font-semibold pr-8">
                   {faq.question}

@@ -50,9 +50,9 @@ export default function ContactPage() {
         <ContactForm />
 
         {/* Info Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8 mt-8 lg:mt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8 mt-8 lg:mt-16">
           {/* Inquiries Column */}
-          <aside className="md:col-span-1">
+          <aside className="lg:col-span-1">
             {/* Mobile Number Section */}
             <div className="mb-6 lg:mb-12">
               <h3 className="text-lg lg:text-xl font-bold mb-3 lg:mb-4">Contact</h3>
@@ -81,8 +81,8 @@ export default function ContactPage() {
           </aside>
 
           {/* Addresses Column */}
-          <section className="md:col-span-2 lg:col-span-3">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <section className="lg:col-span-3">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
               {offices.map((office) => (
                 <AddressCard
                   key={office.id}

@@ -86,7 +86,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               </div>
 
               {/* Menu Content Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 pt-8 sm:pt-12 md:pt-16">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 pt-8 sm:pt-12 lg:pt-16">
                 {/* Column One - Nav Links */}
                 <div>
                   <h2 className="text-xs sm:text-sm uppercase tracking-wider mb-4 sm:mb-6 text-gray-500">

@@ -51,11 +51,11 @@ export default function HorizontalSlider({ sliderProgress }: HorizontalSliderPro
         {historyCards.map((card, index) => (
           <div
             key={index}
-            className="w-screen h-full flex-shrink-0 flex items-center justify-center px-8 lg:px-16 pb-32"
+            className="w-screen h-full flex-shrink-0 flex items-center justify-center px-4 lg:px-16 pb-16 lg:pb-32"
           >
-            <div className="w-full max-w-7xl mx-auto flex items-center gap-8 lg:gap-12">
+            <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-6 lg:gap-12">
               {/* Large Main Image - Left Side - Horizontal Rectangle */}
-              <div className="flex-1 aspect-[16/10] relative overflow-hidden rounded-lg">
+              <div className="w-full lg:flex-1 aspect-[16/10] relative overflow-hidden rounded-lg">
                 <Image
                   src={card.imageUrl}
                   alt={card.title}
@@ -66,7 +66,7 @@ export default function HorizontalSlider({ sliderProgress }: HorizontalSliderPro
               </div>
 
               {/* Text Content - Right Side */}
-              <div className="flex-1 flex flex-col justify-center">
+              <div className="w-full lg:flex-1 flex flex-col justify-center">
                 <h3 className="text-4xl lg:text-6xl font-bold uppercase text-black mb-6">
                   {card.title}
                 </h3>

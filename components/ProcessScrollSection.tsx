@@ -111,14 +111,13 @@ export default function ProcessScrollSection() {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-white text-black relative flex min-h-screen"
+      className="w-full bg-white text-black relative flex flex-col lg:flex-row min-h-screen"
     >
       {/* Left Column - Sticky Title */}
-      <div className="w-1/4 h-screen sticky top-0 flex items-center justify-center pl-16 z-10">
+      <div className="w-full lg:w-1/4 h-auto lg:h-screen lg:sticky top-0 flex items-center justify-center px-4 lg:pl-16 py-4 lg:py-0 z-10">
         <motion.h2
-          className="text-6xl font-bold uppercase whitespace-nowrap text-black"
+          className="text-3xl lg:text-6xl font-bold uppercase whitespace-nowrap text-black lg:[transform:rotate(-90deg)]"
           style={{
-            transform: 'rotate(-90deg)',
             transformOrigin: 'center',
           }}
           initial={{ opacity: 0 }}
@@ -130,7 +129,7 @@ export default function ProcessScrollSection() {
       </div>
 
       {/* Right Area Container - Scrollable Phases */}
-      <div className="w-3/4">
+      <div className="w-full lg:w-3/4">
         {phases.map((phase, index) => (
           <PhaseSection
             key={phase.id}

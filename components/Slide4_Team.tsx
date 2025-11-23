@@ -23,7 +23,7 @@ export default function Slide4_Team() {
           </p>
           <Link
             href="/careers"
-            className="inline-block bg-black text-white font-semibold rounded-full py-3 px-6 lg:py-4 lg:px-8 hover:bg-neutral-800 transition-colors text-sm lg:text-lg"
+            className="inline-block bg-black text-white font-semibold rounded-full py-3 px-6 lg:py-4 lg:px-8 hover:bg-neutral-800 transition-colors text-sm lg:text-lg min-h-[44px] flex items-center justify-center"
           >
             View Careers
           </Link>

@@ -14,16 +14,16 @@ export default function ContentColumn() {
       </p>
 
       {/* Button Container */}
-      <div className="flex flex-row flex-wrap gap-4 mt-4 sm:mt-8">
+      <div className="flex flex-col sm:flex-row flex-wrap gap-4 mt-4 sm:mt-8">
         <Link
           href="#contact"
-          className="bg-black text-white rounded-full py-3 px-6 sm:px-8 font-medium hover:bg-gray-800 transition-colors duration-200 text-sm sm:text-base"
+          className="bg-black text-white rounded-full py-3 px-6 sm:px-8 font-medium hover:bg-gray-800 transition-colors duration-200 text-sm sm:text-base min-h-[44px] flex items-center justify-center"
         >
           Book a Demo
         </Link>
         <Link
           href="#quote"
-          className="bg-blue-600 text-white rounded-full py-3 px-6 sm:px-8 font-medium hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base"
+          className="bg-blue-600 text-white rounded-full py-3 px-6 sm:px-8 font-medium hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base min-h-[44px] flex items-center justify-center"
         >
           Get a Quote
         </Link>

@@ -8,7 +8,7 @@ import ProjectDetailsOverlay from './ProjectDetailsOverlay';
 const ProjectRingCanvas = dynamic(() => import('./ProjectRingCanvas'), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-screen flex items-center justify-center">
+    <div className="w-full h-[60vh] lg:h-screen flex items-center justify-center">
       <div className="text-lg">Loading 3D scene...</div>
     </div>
   ),
@@ -30,7 +30,7 @@ export default function ProjectRingPage() {
   const imageScale: [number, number] = [4 * 1.15, 2 * 1.15]; // [4.6, 2.3]
 
   return (
-    <section className="w-full h-screen relative bg-white overflow-hidden flex items-center justify-center">
+    <section className="w-full h-[60vh] lg:h-screen relative bg-white overflow-hidden flex items-center justify-center">
       <div className="w-full h-full relative">
         <ProjectRingCanvas 
           setHoveredProject={setHoveredProject} 
