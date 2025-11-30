@@ -1,11 +1,13 @@
 import '@/styles/globals.css';
 import '@/styles/components/cylinder-posters.css';
+import '@/styles/components/caustics-glass.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
 import Layout from '@/components/Layout';
 import Preloader from '@/components/Preloader';
 import { LanguageProvider } from '@/contexts/LanguageContext';
+import { metadata } from '@/lib/metadata';
 
 // Optimize fonts with next/font to eliminate layout shifts
 const inter = Inter({
@@ -31,39 +33,30 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         
         {/* Sitewide Meta Tags */}
-        <title>Oakroot Solutions – The Best for Your Business</title>
-        <meta
-          name="description"
-          content="Oakroot Solutions – The Best for Your Business. We help brands grow with creative strategy, performance marketing, and world-class digital execution."
-        />
+        <title>{metadata.title.default}</title>
+        <meta name="description" content={metadata.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         
         {/* Canonical URL */}
-        <link rel="canonical" href="https://oakrootsolutions.com/" />
+        <link rel="canonical" href={metadata.siteUrl} />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://oakrootsolutions.com/" />
-        <meta property="og:title" content="Oakroot Solutions – The Best for Your Business" />
-        <meta
-          property="og:description"
-          content="Oakroot Solutions – The Best for Your Business. We help brands grow with creative strategy, performance marketing, and world-class digital execution."
-        />
-        <meta property="og:image" content="https://oakrootsolutions.com/og-image.png" />
+        <meta property="og:url" content={metadata.siteUrl} />
+        <meta property="og:title" content={metadata.title.default} />
+        <meta property="og:description" content={metadata.description} />
+        <meta property="og:image" content={metadata.ogImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://oakrootsolutions.com/" />
-        <meta name="twitter:title" content="Oakroot Solutions – The Best for Your Business" />
-        <meta
-          name="twitter:description"
-          content="Oakroot Solutions – The Best for Your Business. We help brands grow with creative strategy, performance marketing, and world-class digital execution."
-        />
-        <meta name="twitter:image" content="https://oakrootsolutions.com/og-image.png" />
+        <meta name="twitter:url" content={metadata.siteUrl} />
+        <meta name="twitter:title" content={metadata.title.default} />
+        <meta name="twitter:description" content={metadata.description} />
+        <meta name="twitter:image" content={metadata.ogImage} />
       </Head>
       
       {/* Organization JSON-LD Schema */}
