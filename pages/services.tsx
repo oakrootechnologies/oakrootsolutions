@@ -1,20 +1,20 @@
 import Head from 'next/head';
-import ProcessScrollSection from '@/components/ProcessScrollSection';
+import ServicesDeepDive from '@/components/ServicesDeepDive';
 
 export default function ServicesPage() {
   return (
     <>
       <Head>
-        <title>Our Process | Oakroot Solutions</title>
+        <title>Our Services | Oakroot Solutions</title>
         <meta
           name="description"
-          content="Discover how Oakroot Solutions transforms your vision into reality through our proven process of creative strategy, development, and conversion-focused marketing."
+          content="Discover Oakroot Solutions' premium services: Branding, UI/UX Design, Web Development, App Development, AI Automation, Digital Marketing, and Analytics & Growth."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <main className="bg-white text-black">
-        <ProcessScrollSection />
+        <ServicesDeepDive />
       </main>
     </>
   );

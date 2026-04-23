@@ -137,17 +137,6 @@ export default function IndorePage() {
                 that grow with you.
               </p>
             </div>
-            <div className="p-6 lg:p-8 border border-gray-200 rounded-lg hover:border-black transition-colors">
-              <h3 className="text-xl lg:text-2xl font-bold mb-3 lg:mb-4">
-                <Link href="/services/graphic-design" className="hover:underline">
-                  Graphic Design
-                </Link>
-              </h3>
-              <p className="text-sm lg:text-base text-neutral-600">
-                Professional graphic design services for Indore businesses. Print and digital 
-                designs that make an impact.
-              </p>
-            </div>
           </div>
         </div>
 

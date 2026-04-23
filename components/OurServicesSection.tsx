@@ -8,45 +8,25 @@ import ServiceItem from './ServiceItem';
 const servicesList = [
   {
     id: '1',
-    title: 'Branding',
-    description: 'Crafting your unique brand identity and strategy.',
-    href: '/services/branding',
-  },
-  {
-    id: '2',
-    title: 'UI/UX Design',
-    description: 'Designing intuitive and beautiful user experiences.',
-    href: '/services/web-design', // Links to web design as it's closely related
-  },
-  {
-    id: '3',
-    title: 'Web Design',
-    description: 'Building responsive, high-performance websites.',
+    title: 'Custom Software & Web Development',
+    description: 'Built around your operations. Not templates.',
     href: '/services/web-design',
   },
   {
-    id: '4',
-    title: 'Search Engine Optimization',
-    description: 'Increasing your online visibility and traffic.',
-    href: '/services/digital-marketing', // SEO is part of digital marketing
-  },
-  {
-    id: '5',
-    title: 'Mobile Apps',
-    description: 'Creating custom mobile and web applications.',
-    href: '/services/app-development',
-  },
-  {
-    id: '6',
-    title: 'AI Automations',
-    description: 'Streamlining your operations with intelligent AI.',
-    // No direct page for AI Automations yet
-  },
-  {
-    id: '7',
-    title: 'Digital Marketing',
-    description: 'Growing your audience and driving conversions.',
+    id: '2',
+    title: 'SEO & Ongoing Maintenance',
+    description: "We don't disappear after launch.",
     href: '/services/digital-marketing',
+  },
+  {
+    id: '3',
+    title: 'AI & Operations Automation',
+    description: "Your repetitive work, systematized.",
+  },
+  {
+    id: '4',
+    title: 'Fintech & Financial Systems',
+    description: "Built for lending businesses in India and the UK.",
   },
 ];
 
@@ -93,7 +73,7 @@ export default function OurServicesSection() {
   return (
     <section 
       ref={sectionRef}
-      className="w-full bg-white text-black px-4 lg:px-16 py-12 lg:py-24 overflow-x-hidden"
+      className="w-full bg-white text-black px-4 lg:px-[150px] py-12 lg:py-24 overflow-x-hidden"
     >
       {/* Section Grid */}
       <motion.div
@@ -115,9 +95,10 @@ export default function OurServicesSection() {
           {/* Main Heading */}
           <motion.p
             variants={headingVariants}
-            className="text-4xl lg:text-8xl font-bold mt-4 lg:mt-8 leading-tight"
+            className="text-4xl lg:text-7xl font-bold mt-4 lg:mt-8 leading-tight"
           >
-            We build your entire digital ecosystem.
+            We build software your business depends on.<br />
+            <span className="text-neutral-400">Then we make sure it keeps working.</span>
           </motion.p>
         </div>
 

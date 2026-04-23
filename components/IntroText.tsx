@@ -20,7 +20,7 @@ export default function IntroText({ masterProgress }: IntroTextProps) {
         className="text-[3rem] sm:text-[5rem] md:text-[8rem] lg:text-[10rem] font-bold uppercase text-black leading-none text-center px-4 lg:px-8"
         style={{ scale }}
       >
-        BUILDING THE FUTURE
+        ABOUT OAKROOT
       </motion.h1>
     </motion.div>
   );

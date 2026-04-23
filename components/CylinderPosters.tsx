@@ -58,6 +58,8 @@ export default function CylinderPosters({
 
   // Check for reduced motion preference
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setPrefersReducedMotion(mediaQuery.matches);
     
@@ -74,6 +76,8 @@ export default function CylinderPosters({
 
   // Pause when tab is hidden
   useEffect(() => {
+    if (typeof document === 'undefined') return;
+    
     const handleVisibilityChange = () => {
       setIsVisible(!document.hidden);
     };

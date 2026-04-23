@@ -11,7 +11,8 @@ function generateSiteMap() {
     '/contact',
     '/info',
     '/services',
-    '/projects',
+    '/work',
+    '/case-studies',
     '/talent',
     '/careers',
     '/indore',
@@ -19,8 +20,6 @@ function generateSiteMap() {
     '/services/digital-marketing',
     '/services/app-development',
     '/services/branding',
-    '/services/graphic-design',
-    '/services/video-photo',
   ];
 
   return `<?xml version="1.0" encoding="UTF-8"?>

@@ -7,7 +7,7 @@ const texts = [
   'We are the best website development firm.',
   'We are the best social media managers.',
   'We are the best automaters.',
-  'We are Oakroot Solution.The Best for Your Business',
+  'We are Oakroot Solution.SECURE. SCALABLE. SOVEREIGN.',
 ];
 
 export default function Preloader() {

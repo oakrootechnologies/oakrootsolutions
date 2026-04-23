@@ -108,6 +108,12 @@ const nextConfig = {
         destination: 'https://oakrootsolutions.com/:path*',
         permanent: true,
       },
+      // Redirect old /projects URL to the new /work page
+      {
+        source: '/projects',
+        destination: '/work',
+        permanent: true,
+      },
     ];
   },
 }

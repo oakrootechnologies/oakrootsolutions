@@ -17,7 +17,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
   const navLinks = [
     { href: '/', labelKey: 'home' },
-    { href: '/projects', labelKey: 'projects' },
+    { href: '/work', labelKey: 'work' },
     { href: '/services', labelKey: 'services' },
     { href: '/info', labelKey: 'info' },
     { href: '/contact', labelKey: 'contact' },

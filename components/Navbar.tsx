@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useAppSelector } from '@/store/hooks';
 
 interface NavbarProps {
   isMobileMenuOpen: boolean;
@@ -12,17 +12,9 @@ interface NavbarProps {
 }
 
 export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: NavbarProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
   const { t } = useLanguage();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // Use Redux state for scroll position (tracked by PerformanceMonitor)
+  const isScrolled = useAppSelector((state) => state.ui.isScrolled);
 
   return (
     <motion.nav
@@ -70,7 +62,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
               </motion.span>
             </Link>
             <Link
-              href="/projects"
+              href="/work"
               className="relative group text-sm lg:text-base"
             >
               <motion.span
@@ -80,7 +72,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
                 className="relative"
               >
-                {t('projects')}
+                {t('work')}
                 <span className="absolute bottom-0 left-0 w-0 h-px bg-current group-hover:w-full transition-all duration-300"></span>
               </motion.span>
             </Link>

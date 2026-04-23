@@ -7,7 +7,9 @@ import { Inter } from 'next/font/google';
 import Layout from '@/components/Layout';
 import Preloader from '@/components/Preloader';
 import { LanguageProvider } from '@/contexts/LanguageContext';
+import StoreProvider from '@/store/StoreProvider';
 import { metadata } from '@/lib/metadata';
+import PerformanceMonitor from '@/components/PerformanceMonitor';
 
 // Optimize fonts with next/font to eliminate layout shifts
 const inter = Inter({
@@ -19,8 +21,10 @@ const inter = Inter({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={inter.variable}>
-      <LanguageProvider>
+    <StoreProvider>
+      <div className={inter.variable}>
+        <LanguageProvider>
+          <PerformanceMonitor />
       <Head>
         {/* Performance: Preconnect to critical CDNs */}
         <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
@@ -68,7 +72,7 @@ export default function App({ Component, pageProps }: AppProps) {
             '@type': 'Organization',
             name: 'Oakroot Solutions',
             url: 'https://oakrootsolutions.com/',
-            slogan: 'The Best for Your Business',
+            slogan: 'SECURE. SCALABLE. SOVEREIGN.',
             logo: 'https://oakrootsolutions.com/logo.png',
             '@id': 'https://oakrootsolutions.com/',
             sameAs: [
@@ -114,12 +118,13 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       />
       
-      <Preloader />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </LanguageProvider>
-    </div>
+          <Preloader />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </LanguageProvider>
+      </div>
+    </StoreProvider>
   );
 }
 

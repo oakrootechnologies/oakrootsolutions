@@ -1,72 +1,84 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import OptimizedVideo from './OptimizedVideo';
-
-const heroTextLine1 = 'We are Oakroot Solutions,';
-const heroTextLine2 = 'The Best for Your Business';
-
-// Mobile version (4 lines)
-const heroTextMobile1 = 'We are Oakroot';
-const heroTextMobile2 = 'Solutions,';
-const heroTextMobile3 = 'The Best for Your';
-const heroTextMobile4 = 'Business';
 
 export default function AnimatedTextHero() {
   const [mounted, setMounted] = useState(false);
+  const [isVideoFinished, setIsVideoFinished] = useState(false);
+  const hasLockedScroll = useRef(false);
 
   useEffect(() => {
     setMounted(true);
+    
+    // Only lock scroll once when the component initially mounts
+    if (!hasLockedScroll.current && typeof window !== 'undefined') {
+      // Force scroll to top immediately
+      window.scrollTo(0, 0);
+      
+      hasLockedScroll.current = true;
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+      
+      // If Lenis is ready, stop it
+      if ((window as any).lenis) {
+        (window as any).lenis.stop();
+      } else {
+        // Fallback: keep checking for Lenis until it's injected
+        const checkLenis = setInterval(() => {
+          if ((window as any).lenis) {
+            (window as any).lenis.stop();
+            clearInterval(checkLenis);
+          }
+        }, 100);
+        setTimeout(() => clearInterval(checkLenis), 2000); // Stop checking after 2s
+      }
+    }
+
+    // Cleanup: Ensure scroll is unlocked if the component unmounts unexpectedly
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+      if ((window as any).lenis) {
+        (window as any).lenis.start();
+      }
+    };
   }, []);
+
+  const handleVideoEnded = () => {
+    setIsVideoFinished(true);
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+    if ((window as any).lenis) {
+      (window as any).lenis.start();
+    }
+  };
+
   return (
     <section className="w-full min-h-screen relative flex flex-col justify-center items-center bg-white px-4 pt-24 md:pt-28 lg:pt-32 pb-16 md:pb-20 lg:pb-24 overflow-x-hidden">
-      {/* Text Container */}
+      {/* Video Container */}
       <div className="flex flex-col items-center justify-center w-full max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="w-full px-4 py-8 md:py-12"
-        >
-          {/* Desktop/Tablet Version - 2 lines */}
-          <h2 className="hidden lg:block text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-center text-black leading-tight">
-            <div className="flex flex-col items-center gap-2">
-              <div className="whitespace-nowrap">{heroTextLine1}</div>
-              <div className="whitespace-nowrap">{heroTextLine2}</div>
-            </div>
-          </h2>
-
-          {/* Mobile Version - 4 lines */}
-          <h2 className="lg:hidden text-2xl sm:text-3xl font-bold text-center text-black leading-tight">
-            <div className="flex flex-col items-center gap-1">
-              <div>{heroTextMobile1}</div>
-              <div>{heroTextMobile2}</div>
-              <div>{heroTextMobile3}</div>
-              <div>{heroTextMobile4}</div>
-            </div>
-          </h2>
-        </motion.div>
-
         {/* Video Player - Large size with margin - Using OptimizedVideo */}
         {mounted && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-            className="w-[95%] max-w-7xl mt-8 md:mt-12 lg:mt-16"
+            className="w-[95%] max-w-7xl"
           >
             <OptimizedVideo
               src="/videos/hero-video.mp4"
               poster="/videos/hero-video-poster.jpg"
               type="video/mp4"
-              autoplay
-              muted
-              loop
+              autoplay={true}
+              muted={true}
+              loop={false}   // Prevent looping so onEnded fires
               playsInline
               controls={false}
-              preload="metadata"
+              preload="auto"
               lazy={false}
+              onEnded={handleVideoEnded}
               className="w-full h-auto rounded-lg shadow-2xl"
             />
           </motion.div>

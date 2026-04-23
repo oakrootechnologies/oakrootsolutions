@@ -9,8 +9,7 @@ export default function Footer() {
     { name: 'Digital Marketing', href: '/services/digital-marketing' },
     { name: 'App Development', href: '/services/app-development' },
     { name: 'Branding', href: '/services/branding' },
-    { name: 'Graphic Design', href: '/services/graphic-design' },
-    { name: 'Video & Photo', href: '/services/video-photo' },
+    { name: 'Our Work', href: '/work' },
   ];
 
   const aboutLinks = [

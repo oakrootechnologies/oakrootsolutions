@@ -16,6 +16,8 @@ export default function ProjectRingCanvas() {
   );
 
   useEffect(() => {
+    if (typeof document === 'undefined') return;
+    
     setMounted(true);
     
     // Check for WebGL support

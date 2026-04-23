@@ -4,81 +4,113 @@ import { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export default function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
-  // Spring animations for the trailing circle
-  const springX = useMotionValue(0);
-  const springY = useMotionValue(0);
+  // Motion values for high performance (no re-renders on every mouse move)
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
   
-  const smoothX = useSpring(springX, { stiffness: 300, damping: 20 });
-  const smoothY = useSpring(springY, { stiffness: 300, damping: 20 });
+  // Spring configurations for smooth trailing effect
+  const springConfig = { stiffness: 400, damping: 30 };
+  const trailConfig = { stiffness: 150, damping: 20 };
+
+  const dotX = useSpring(mouseX, springConfig);
+  const dotY = useSpring(mouseY, springConfig);
+  
+  const trailX = useSpring(mouseX, trailConfig);
+  const trailY = useSpring(mouseY, trailConfig);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isVisible) setIsVisible(true);
-      
-      // Update instant mouse position
-      setMousePosition({ x: e.clientX, y: e.clientY });
-      
-      // Update spring values for trailing circle
-      springX.set(e.clientX);
-      springY.set(e.clientY);
-    };
-
-    const handleMouseLeave = () => {
-      setIsVisible(false);
-    };
-
-    // Add event listeners
-    window.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseleave', handleMouseLeave);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, [springX, springY, isVisible]);
-
-  // Don't render on mobile/touch devices
-  useEffect(() => {
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (typeof window === 'undefined') return;
+    
+    // Check if it's a touch device - don't show custom cursor on mobile
+    const isTouchDevice = 'ontouchstart' in window || (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
     if (isTouchDevice) {
       setIsVisible(false);
+      return;
     }
-  }, []);
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isVisible) setIsVisible(true);
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+    };
+
+    const handleMouseDown = () => setIsClicked(true);
+    const handleMouseUp = () => setIsClicked(false);
+
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const isInteractive = 
+        target.tagName === 'A' || 
+        target.tagName === 'BUTTON' || 
+        target.closest('a') || 
+        target.closest('button') ||
+        target.getAttribute('data-cursor') === 'hover';
+      
+      setIsHovered(!!isInteractive);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('mouseover', handleMouseOver);
+    document.addEventListener('mouseleave', () => setIsVisible(false));
+    document.addEventListener('mouseenter', () => setIsVisible(true));
+
+    // Handle initial state if mouse is already in window
+    setIsVisible(true);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mousedown', handleMouseDown);
+      window.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener('mouseover', handleMouseOver);
+    };
+  }, [mouseX, mouseY, isVisible]);
 
   if (!isVisible) return null;
 
   return (
     <>
-      {/* Main Dot - follows cursor instantly */}
+      {/* Main Dot - follows cursor with slight spring */}
       <motion.div
-        className="fixed w-2 h-2 bg-white rounded-full pointer-events-none z-[9999]"
-        style={{ mixBlendMode: 'difference' }}
-        animate={{
-          left: `${mousePosition.x - 4}px`, // Center the 8px (w-2) dot
-          top: `${mousePosition.y - 4}px`,
-        }}
-        transition={{
-          type: 'tween',
-          duration: 0,
-        }}
-      />
-
-      {/* Trailing Circle - follows with spring lag */}
-      <motion.div
-        className="fixed w-10 h-10 border-2 border-white rounded-full pointer-events-none z-[9999]"
+        className="fixed w-1.5 h-1.5 bg-white rounded-full pointer-events-none z-[9999]"
         style={{
-          left: smoothX,
-          top: smoothY,
+          left: dotX,
+          top: dotY,
           x: '-50%',
           y: '-50%',
           mixBlendMode: 'difference',
+        }}
+        animate={{
+          scale: isClicked ? 0.8 : 1,
+        }}
+      />
+
+      {/* Trailing Circle - broad interaction point */}
+      <motion.div
+        className="fixed w-8 h-8 border border-white rounded-full pointer-events-none z-[9999]"
+        style={{
+          left: trailX,
+          top: trailY,
+          x: '-50%',
+          y: '-50%',
+          mixBlendMode: 'difference',
+        }}
+        animate={{
+          scale: isHovered ? 2.5 : isClicked ? 0.6 : 1,
+          backgroundColor: isHovered ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
+          borderWidth: isHovered ? 0 : 1,
+        }}
+        transition={{
+          type: 'spring',
+          stiffness: 250,
+          damping: 25,
         }}
       />
     </>
   );
 }
-

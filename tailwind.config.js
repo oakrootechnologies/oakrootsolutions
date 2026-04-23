@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        aurora: '#0d9488',
       },
     },
   },

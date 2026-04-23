@@ -233,19 +233,19 @@ export default function ServicesFlowSection() {
                       <path
                         d="M 160,20 A 140,140 0 0,1 300,160"
                         fill="none"
-                        stroke="#FACC15"
+                        stroke="#0d9488"
                         strokeWidth="8"
                         strokeLinecap="round"
                       />
                       {/* Arrow head at the end */}
                       <polygon
                         points="300,160 290,145 295,150 285,150 295,170 290,175 300,160"
-                        fill="#FACC15"
+                        fill="#0d9488"
                       />
                     </motion.svg>
                     
                     {/* White circle container */}
-                    <div className="absolute inset-[3px] bg-white rounded-full shadow-2xl flex flex-col justify-center items-center text-center p-4 lg:p-8 hover:bg-neutral-50 transition-colors">
+                    <div className="absolute inset-[3px] bg-white rounded-full shadow-2xl flex flex-col justify-center items-center text-center p-4 lg:p-8 hover:bg-aurora/5 transition-colors">
                       {/* Changed from h3 to p for SEO (duplicate headings in loop) - preserving exact className */}
                       <p className="text-sm lg:text-2xl font-bold uppercase mb-1 lg:mb-2 leading-tight">
                         {service.number} {service.title}

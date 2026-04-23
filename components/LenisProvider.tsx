@@ -15,6 +15,9 @@ export default function LenisProvider({ children }: LenisProviderProps) {
       smoothWheel: true, // Smooth scroll on mouse wheel
     });
 
+    // Expose lenis globally to stop/start scrolling programmatically
+    (window as any).lenis = lenis;
+
     let rafId: number;
     let isRunning = true;
 

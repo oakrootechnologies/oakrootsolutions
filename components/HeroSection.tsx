@@ -1,5 +1,5 @@
 import ContentColumn from './ContentColumn';
-import VisualColumn from './VisualColumn';
+import BentCarouselHero from './BentCarouselHero';
 
 export default function HeroSection() {
   return (
@@ -10,9 +10,9 @@ export default function HeroSection() {
           <ContentColumn />
         </div>
 
-        {/* Visual Column */}
+        {/* 3D Bent Carousel */}
         <div className="order-1 lg:order-2">
-          <VisualColumn />
+          <BentCarouselHero />
         </div>
       </div>
     </section>
