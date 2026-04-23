@@ -50,9 +50,14 @@ export function createLazyLoad<T extends ComponentType<any>>(
     </div>
   );
 
+  // next/dynamic loading expects (props: DynamicOptionsLoadingProps) => Element | null
+  const loadingComponent = loading
+    ? () => { const C = loading as ComponentType; return <C />; }
+    : DefaultLoading;
+
   return dynamic(importFn, {
     ssr,
-    loading: loading || DefaultLoading,
+    loading: loadingComponent,
   }) as ComponentType<any>;
 }
 

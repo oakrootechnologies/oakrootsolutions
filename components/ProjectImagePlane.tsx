@@ -80,7 +80,6 @@ export default function ProjectImagePlane({
           setHoveredProject?.(null);
         }}
         onClick={handleClick}
-        style={{ cursor: project.externalUrl ? 'pointer' : 'default' }}
       />
     </group>
   );

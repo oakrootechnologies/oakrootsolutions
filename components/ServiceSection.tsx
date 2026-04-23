@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useScroll } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import StepCard from './StepCard';
 import ScrollProgressLine from './ScrollProgressLine';
 
@@ -119,13 +120,13 @@ export default function ServiceSection({ service, isActive, index }: ServiceSect
         >
           <p className="text-lg lg:text-xl font-medium">
             Have a project in mind?{' '}
-            <a 
+            <Link 
               href="/contact" 
               className="text-aurora hover:underline font-bold inline-flex items-center gap-2 group"
             >
               Start a conversation 
               <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-            </a>
+            </Link>
           </p>
         </motion.div>
       </div>

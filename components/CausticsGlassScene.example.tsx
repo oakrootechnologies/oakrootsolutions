@@ -28,7 +28,7 @@ import {
 // ============================================
 function SceneWithCustomGLB(props: any) {
   // Load your custom GLB model
-  const { nodes, materials } = useGLTF('/your-custom-model.glb');
+  const { nodes, materials } = useGLTF('/your-custom-model.glb') as any;
 
   return (
     <group {...props} dispose={null}>
@@ -105,7 +105,7 @@ function SceneWithPrimitives(props: any) {
 // ============================================
 function SceneMixed(props: any) {
   // Load a GLB model
-  const { nodes, materials } = useGLTF('/your-model.glb');
+  const { nodes, materials } = useGLTF('/your-model.glb') as any;
 
   return (
     <group {...props} dispose={null}>

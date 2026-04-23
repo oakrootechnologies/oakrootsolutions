@@ -83,7 +83,7 @@ export default function DubaiPage() {
                 </Link>
               </h3>
               <p className="text-sm lg:text-base text-neutral-600">
-                Premium, responsive websites designed for Dubai's competitive market. We create 
+                Premium, responsive websites designed for Dubai&apos;s competitive market. We create 
                 digital experiences that drive conversions and build brand authority.
               </p>
             </div>

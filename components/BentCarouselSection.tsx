@@ -147,6 +147,7 @@ function Card({
   });
 
   return (
+    // eslint-disable-next-line jsx-a11y/alt-text
     <Image
       ref={ref}
       url={url}

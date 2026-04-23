@@ -36,7 +36,7 @@
 import Image, { ImageProps, StaticImageData } from 'next/image';
 import { useState, useEffect } from 'react';
 
-export interface OptimizedImageProps extends Omit<ImageProps, 'src'> {
+export interface OptimizedImageProps extends Omit<ImageProps, 'src' | 'placeholder'> {
   src: string | StaticImageData;
   alt: string;
   priority?: boolean;
@@ -199,12 +199,14 @@ export default function OptimizedImage({
           srcSet={getCdnUrl(src, 'webp', cdnConfig)}
         />
         {/* Fallback to next/image */}
+        {/* eslint-disable-next-line jsx-a11y/alt-text -- alt is included in imageProps spread */}
         <Image {...imageProps} />
       </picture>
     );
   }
 
   // Standard next/image for internal images or when no CDN config
+  // eslint-disable-next-line jsx-a11y/alt-text -- alt is included in imageProps spread
   return <Image {...imageProps} />;
 }
 

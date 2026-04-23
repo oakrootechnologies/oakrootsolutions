@@ -46,7 +46,8 @@ function Scene(props: any) {
   // Note: This will suspend until the model loads
   // If the model file doesn't exist, it will error
   // The error boundary in CausticsGlassSection will catch it
-  const { nodes, materials } = useGLTF('/glass-transformed.glb');
+  // Nodes are typed as Object3D generically; cast to any for GLTF-specific properties
+  const { nodes, materials } = useGLTF('/glass-transformed.glb') as any;
 
   return (
     <group {...props} dispose={null}>
@@ -86,15 +87,14 @@ function Scene(props: any) {
       />
 
       <Caustics
-        backfaces
+        backside
+        causticsOnly={false}
         color={[1, 0.8, 0.8]}
-        focus={[0, -1.2, 0]}
         lightSource={[-1.2, 3, -2]}
-        frustum={1.75}
         intensity={0.005}
         worldRadius={0.1126 / 10}
         ior={0.91}
-        backfaceIor={1.26}
+        backsideIOR={1.26}
       >
         <mesh castShadow receiveShadow geometry={nodes.glass.geometry}>
           <MeshTransmissionMaterial
