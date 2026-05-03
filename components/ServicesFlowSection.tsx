@@ -174,11 +174,10 @@ export default function ServicesFlowSection() {
       {/* Static Header */}
       <div className="text-center max-w-3xl mx-auto mb-8 lg:mb-16">
         <h2 className="text-3xl lg:text-6xl font-bold mb-4 lg:mb-6 leading-tight">
-          Elite Talent, Unmatched Creativity
+          How We Work
         </h2>
-        <p className="text-base lg:text-lg text-neutral-600">
-          We bring together the best minds in design and development to create
-          digital experiences that elevate your brand and drive results.
+        <p className="text-base lg:text-lg text-neutral-600 tracking-wide font-medium mt-2">
+          a real Case Study.
         </p>
       </div>
 

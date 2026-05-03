@@ -1,5 +1,15 @@
+import dynamic from 'next/dynamic';
 import ContentColumn from './ContentColumn';
-import BentCarouselHero from './BentCarouselHero';
+
+// Three.js/R3F MUST be dynamically imported with ssr:false.
+// A static import would pull bentCarouselUtil → extend() into the SSR module
+// graph, corrupting the React Three Fiber renderer state on the server.
+const BentCarouselHero = dynamic(() => import('./BentCarouselHero'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-[400px] sm:h-[500px] lg:h-[800px] bg-neutral-50 rounded-xl animate-pulse" />
+  ),
+});
 
 export default function HeroSection() {
   return (
@@ -10,7 +20,7 @@ export default function HeroSection() {
           <ContentColumn />
         </div>
 
-        {/* 3D Bent Carousel */}
+        {/* 3D Bent Carousel — client-only via ssr:false */}
         <div className="order-1 lg:order-2">
           <BentCarouselHero />
         </div>

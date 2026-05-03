@@ -1,58 +1,51 @@
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 import AnimatedTextHero from '@/components/AnimatedTextHero';
 import BrandStrip from '@/components/BrandStrip';
 import HeroSection from '@/components/HeroSection';
 import OurServicesSection from '@/components/OurServicesSection';
 import OurClientsSection from '@/components/OurClientsSection';
 import AwesomeWorksSection from '@/components/AwesomeWorksSection';
-import { createLazyLoad } from '@/utils/lazyLoad';
+// Static imports — SSR-safe, no browser-only APIs, no hydration risk
+import ServicesFlowSection from '@/components/ServicesFlowSection';
+import TiltedMarquee from '@/components/TiltedMarquee';
+import TestimonialsSlider from '@/components/TestimonialsSlider';
 
-// Lazy load heavy components for better performance with optimized loading states
-const ServicesFlowSection = createLazyLoad(
-  () => import('@/components/ServicesFlowSection'),
-  {
-    ssr: true,
-    priority: 'low',
-    fallback: <div className="w-full h-[400px] sm:h-[500px] md:h-[600px] bg-white" />,
-  }
-);
-
-const TiltedMarquee = createLazyLoad(
-  () => import('@/components/TiltedMarquee'),
-  {
-    ssr: true,
-    priority: 'low',
-    fallback: <div className="w-full h-[150px] sm:h-[200px] md:h-[250px] bg-white" />,
-  }
-);
-
-const TestimonialsSlider = createLazyLoad(
-  () => import('@/components/TestimonialsSlider'),
-  {
-    ssr: true,
-    priority: 'low',
-    fallback: <div className="w-full h-[500px] sm:h-[600px] md:h-[700px] bg-white" />,
-  }
-);
-
-// 3D components - no SSR for better performance
-const BentCarouselSection = createLazyLoad(
+// Three.js components: must be ssr:false (WebGL = browser only)
+// next/dynamic options must be static object literals (webpack build-time analysis)
+const BentCarouselSection = dynamic(
   () => import('@/components/BentCarouselSection'),
   {
     ssr: false,
-    priority: 'low',
-    fallback: <div className="w-full h-screen bg-white" />,
+    loading: () => <div style={{ width: '100%', height: '100vh', background: '#fff' }} />,
   }
 );
 
-const CausticsGlassSection = createLazyLoad(
+/* const CausticsGlassSection = dynamic(
   () => import('@/components/CausticsGlassSection'),
   {
     ssr: false,
-    priority: 'low',
-    fallback: <div className="w-full h-screen bg-[#f0f0f0]" />,
+    loading: () => <div style={{ width: '100%', height: '100vh', background: '#f0f0f0' }} />,
+  }
+); */
+
+const GlobeWidget = dynamic(
+  () => import('@/components/GlobeWidget'),
+  {
+    ssr: false,
+    loading: () => <div style={{ width: '100%', height: '700px', background: 'transparent' }} />,
   }
 );
+
+const ParallaxProjectGallery = dynamic(
+  () => import('@/components/ParallaxProjectGallery'),
+  {
+    ssr: false,
+    loading: () => <div style={{ width: '100%', height: '600px', background: '#F5F4F0' }} />,
+  }
+);
+
+
 
 export default function Home() {
   return (
@@ -68,7 +61,7 @@ export default function Home() {
         <link rel="canonical" href="https://oakrootsolutions.com/" />
         
         {/* Performance: Preload critical hero video for LCP */}
-        <link rel="preload" as="video" href="/videos/hero-video.mp4" type="video/mp4" />
+        <link rel="preload" as="video" href="/videos/new-hero.mp4" type="video/mp4" />
         <link rel="preload" as="image" href="/videos/hero-video-poster.jpg" />
       </Head>
       
@@ -90,11 +83,14 @@ export default function Home() {
           <HeroSection />
         </div>
 
-        {/* 3D Bent Card Carousel Section */}
+        {/* 3D Bent Card Carousel — ssr:false handles client-only, no ClientOnly needed */}
         <BentCarouselSection />
 
-        {/* Services Flow Section */}
+        {/* Services Flow Section — "How We Work" header */}
         <ServicesFlowSection />
+
+        {/* Parallax Diagonal Stack Gallery — Case Study cards */}
+        <ParallaxProjectGallery />
 
         {/* Tilted Marquee Section */}
         <TiltedMarquee />
@@ -102,11 +98,14 @@ export default function Home() {
         {/* Our Clients Section */}
         <OurClientsSection />
 
+        {/* Globe Component */}
+        <GlobeWidget />
+
         {/* Testimonials Slider Section */}
         <TestimonialsSlider />
 
         {/* Caustics Glass Scene Section - Just above footer */}
-        <CausticsGlassSection />
+        {/* <CausticsGlassSection /> */}
       </div>
     </>
   );

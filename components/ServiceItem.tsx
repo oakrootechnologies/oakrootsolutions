@@ -32,13 +32,15 @@ export default function ServiceItem({ title, description, href, index = 0, isInV
     },
   };
 
+  const gridClassName = "grid grid-cols-1 lg:grid-cols-[1.2fr,1fr] gap-4 lg:gap-12 items-start w-full";
+
   const content = (
-    <>
-      {/* Changed from h3 to p for SEO (duplicate headings in loop) - preserving exact className */}
+    <div className={gridClassName}>
       <motion.p
-        className="text-xl lg:text-3xl font-medium underline relative"
+        className="text-xl lg:text-3xl font-medium underline leading-tight"
         animate={{
-          scale: isHovered ? 1.02 : 1,
+          scale: isHovered ? 1.01 : 1,
+          color: isHovered ? '#000' : '#171717',
         }}
         transition={{
           duration: 0.3,
@@ -48,9 +50,9 @@ export default function ServiceItem({ title, description, href, index = 0, isInV
         {title}
       </motion.p>
       <motion.p
-        className="text-sm lg:text-lg text-neutral-600 ml-2 lg:ml-4"
+        className="text-sm lg:text-lg text-neutral-500 mt-1 lg:mt-2"
         animate={{
-          opacity: isHovered ? 1 : 0.8,
+          opacity: isHovered ? 1 : 0.7,
           x: isHovered ? 4 : 0,
         }}
         transition={{
@@ -60,13 +62,13 @@ export default function ServiceItem({ title, description, href, index = 0, isInV
       >
         {description}
       </motion.p>
-    </>
+    </div>
   );
 
   return (
     <motion.div
       ref={itemRef}
-      className={`flex items-baseline mb-6 group ${href ? 'cursor-pointer' : 'cursor-default'}`}
+      className={`mb-8 lg:mb-10 group ${href ? 'cursor-pointer' : 'cursor-default'}`}
       variants={itemVariants}
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
@@ -74,7 +76,7 @@ export default function ServiceItem({ title, description, href, index = 0, isInV
       onHoverEnd={() => setIsHovered(false)}
     >
       {href ? (
-        <Link href={href} className="flex items-baseline w-full">
+        <Link href={href} className="block w-full">
           {content}
         </Link>
       ) : (

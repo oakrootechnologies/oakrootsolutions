@@ -10,6 +10,10 @@ const ProjectRingCanvas = dynamic(() => import('@/components/ProjectRingCanvas')
   ssr: false,
 });
 
+const ParallaxProjectGallery = dynamic(() => import('@/components/ParallaxProjectGallery'), {
+  ssr: false,
+});
+
 const caseStudies = [
   {
     id: 'eco-smart',
@@ -78,7 +82,7 @@ export default function Work() {
           section being absent on the server during the first reconciliation */}
       <section
         suppressHydrationWarning
-        className="relative w-full h-[60vh] lg:h-screen bg-black overflow-hidden"
+        className="relative w-full h-[60vh] lg:h-screen bg-[#F5F4F0] overflow-hidden"
       >
         {mounted && (
           <>
@@ -88,25 +92,16 @@ export default function Work() {
               imageScale={[4 * 1.15, 2 * 1.15]}
               centered={true}
             />
-            {/* Bottom fade to white */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+            {/* Bottom fade to background */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F5F4F0] to-transparent" />
           </>
         )}
 
-        {/* Page heading — always rendered (server + client) */}
-        <div className="absolute inset-0 flex items-end pointer-events-none">
-          <div className="px-6 lg:px-16 pb-10 lg:pb-16">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-5xl sm:text-7xl lg:text-9xl font-bold text-white uppercase leading-none"
-            >
-              Our Work
-            </motion.h1>
-          </div>
-        </div>
+
       </section>
+
+      {/* ─── Parallax Gallery ──────────────────────────────────────────────── */}
+      <ParallaxProjectGallery />
 
       {/* ─── Case Studies Section ──────────────────────────────────────────── */}
       <section className="bg-white px-6 lg:px-16 pt-12 pb-24 lg:pt-20 lg:pb-40">

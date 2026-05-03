@@ -5,7 +5,6 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
 import Layout from '@/components/Layout';
-import Preloader from '@/components/Preloader';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import StoreProvider from '@/store/StoreProvider';
 import { metadata } from '@/lib/metadata';
@@ -22,7 +21,7 @@ const inter = Inter({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <StoreProvider>
-      <div className={inter.variable}>
+      <div className={`${inter.variable} font-sans`}>
         <LanguageProvider>
           <PerformanceMonitor />
       <Head>
@@ -118,7 +117,6 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       />
       
-          <Preloader />
           <Layout>
             <Component {...pageProps} />
           </Layout>

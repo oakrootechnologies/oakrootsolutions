@@ -2,21 +2,12 @@
 
 import { useAppSelector, useAppDispatch } from '@/store/hooks';
 import { setMobileMenuOpen } from '@/store/slices/uiSlice';
-import { createLazyLoad } from '@/utils/lazyLoad';
 import Navbar from './Navbar';
 import MobileMenu from './MobileMenu';
 import CustomCursor from './CustomCursor';
 import LenisProvider from './LenisProvider';
-
-// Lazy load Footer to reduce initial bundle size with optimized loading
-const Footer = createLazyLoad(
-  () => import('./Footer'),
-  {
-    ssr: true,
-    priority: 'low',
-    fallback: <div className="w-full h-[200px] bg-white" />,
-  }
-);
+// Direct static import — Footer is SSR-safe, no dynamic needed
+import Footer from './Footer';
 
 interface LayoutProps {
   children: React.ReactNode;
