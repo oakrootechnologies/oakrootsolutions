@@ -45,6 +45,7 @@ export default function GlobeWidget() {
         { location: [25.204,   55.270] as [number,number], size: 0.05 },
         { location: [22.319,  114.169] as [number,number], size: 0.04 },
       ],
+      // @ts-ignore
       onRender(state) {
         if (pointerX === null) phi += 0.004;
         state.phi    = phi + drag;
