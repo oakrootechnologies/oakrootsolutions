@@ -4,6 +4,8 @@ import '@/styles/components/caustics-glass.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Layout from '@/components/Layout';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import StoreProvider from '@/store/StoreProvider';
@@ -19,6 +21,37 @@ const inter = Inter({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
+  useEffect(() => {
+    // ── Manual scroll restoration — we control this ourselves ──────────────────
+    if (typeof window !== 'undefined') {
+      history.scrollRestoration = 'manual';
+    }
+
+    // ── Save homepage scroll when navigating away from '/' ────────────────
+    const saveHomepageScroll = (url: string) => {
+      if (router.pathname === '/') {
+        sessionStorage.setItem(
+          'oakroot_home_scroll',
+          String(Math.round(window.scrollY))
+        );
+      }
+    };
+
+    // ── Flag back/forward navigations (popstate fires before Next.js router) ──
+    const flagPopstate = () => {
+      sessionStorage.setItem('oakroot_is_popstate', '1');
+    };
+
+    router.events.on('routeChangeStart', saveHomepageScroll);
+    window.addEventListener('popstate', flagPopstate);
+
+    return () => {
+      router.events.off('routeChangeStart', saveHomepageScroll);
+      window.removeEventListener('popstate', flagPopstate);
+    };
+  }, [router]);
   return (
     <StoreProvider>
       <div className={`${inter.variable} font-sans`}>

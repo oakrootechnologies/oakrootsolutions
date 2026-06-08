@@ -6,22 +6,25 @@ import Image from 'next/image';
 
 const works = [
   {
-    id: 'betely',
-    title: 'Betely Agency',
-    category: 'UI/UX Website Design',
+    id: 'wittywealth',
+    title: 'Witty Wealth',
+    category: 'Web Application',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&q=80',
+    url: 'https://www.wittywealth.org/',
   },
   {
-    id: 'growthy',
-    title: 'Growthy',
-    category: 'UI/UX Mobile App Design',
+    id: 'oksingreen',
+    title: 'OkSinGreen',
+    category: 'E-commerce Platform',
     image: 'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=1000&q=80',
+    url: 'https://oksingreen.com/',
   },
   {
-    id: 'alpnace',
-    title: 'Alpnace',
-    category: 'Branding Design',
+    id: 'setsquare',
+    title: 'SetSquare Construction',
+    category: 'Corporate Website',
     image: 'https://images.unsplash.com/photo-1621619856624-42fd193a0661?w=1000&q=80',
+    url: 'https://www.setsquareconstruction.ca/',
   },
 ];
 
@@ -88,7 +91,7 @@ export default function AwesomeWorksSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.15 }}
             >
-              <Link href={`/case-study/${work.id}`} className="group cursor-pointer flex flex-col h-full block">
+              <Link href={work.url} target="_blank" rel="noopener noreferrer" className="group cursor-pointer flex flex-col h-full block">
                 {/* Image */}
                 <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden bg-neutral-100 mb-6 lg:mb-8">
                   <Image 

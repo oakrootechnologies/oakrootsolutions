@@ -71,10 +71,10 @@ export default function ContactPage() {
               <h3 className="text-lg lg:text-xl font-bold mb-3 lg:mb-4">General Inquiries</h3>
               <p className="text-sm lg:text-base text-gray-600 mb-2">
                 <a
-                  href="mailto:info@oakrootsolutions.com"
+                  href="mailto:hello@oakrootsolutions.com"
                   className="text-black hover:underline underline-offset-4 transition-all"
                 >
-                  info@oakrootsolutions.com
+                  hello@oakrootsolutions.com
                 </a>
               </p>
             </div>

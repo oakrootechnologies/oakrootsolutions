@@ -22,14 +22,43 @@ export default function AnimatedTextHero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // ─── mount + scroll lock ────────────────────────────────────────────────────
+  // ─── mount — decide between full intro vs skip ───────────────────────────────
   useEffect(() => {
     setMounted(true);
+
+    const introPlayed = sessionStorage.getItem('oakroot_intro_played') === '1';
+    const isPopstate  = sessionStorage.getItem('oakroot_is_popstate')  === '1';
+    const savedScroll = Number(sessionStorage.getItem('oakroot_home_scroll') || '0');
+
+    // ── Skip-intro path (all client-side navigations after the first load) ──
+    if (introPlayed) {
+      setStage('done');
+
+      let scrollTimer: ReturnType<typeof setTimeout>;
+      if (isPopstate && savedScroll > 0) {
+        // Back / forward navigation → restore exact scroll position
+        sessionStorage.removeItem('oakroot_is_popstate');
+        scrollTimer = setTimeout(() => {
+          if ((window as any).lenis) {
+            (window as any).lenis.scrollTo(savedScroll, { immediate: true });
+          } else {
+            window.scrollTo(0, savedScroll);
+          }
+        }, 80);
+      } else {
+        // Navbar / link click → scroll to top, fresh view
+        window.scrollTo(0, 0);
+      }
+
+      return () => { if (scrollTimer) clearTimeout(scrollTimer); };
+    }
+
+    // ── Full intro path (hard refresh / first ever visit this session) ────────
     document.body.style.overflow            = 'hidden';
     document.documentElement.style.overflow = 'hidden';
     if ((window as any).lenis) (window as any).lenis.stop();
 
-    // Safety: force shrink if video never triggers it
+    // Safety: force shrink if video never fires ended/timeupdate
     const safety = setTimeout(() => {
       setStage(prev => prev === 'video' ? 'shrinking' : prev);
     }, 8000);
@@ -55,6 +84,10 @@ export default function AnimatedTextHero() {
     if (stage === 'reveal') {
       // Hold the video-in-text effect for 1.8 s, then exit
       timerRef.current = setTimeout(() => {
+        // Mark intro as played for this browser session.
+        // sessionStorage is cleared on hard-refresh, so the full intro
+        // will replay on reload but skip on all client-side navigations.
+        sessionStorage.setItem('oakroot_intro_played', '1');
         setStage('done');
         document.body.style.overflow            = '';
         document.documentElement.style.overflow = '';

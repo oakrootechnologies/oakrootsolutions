@@ -160,8 +160,8 @@ export default function IndorePage() {
               </p>
               <p className="text-base lg:text-lg text-neutral-600 mb-6">
                 <strong>Email:</strong>{' '}
-                <a href="mailto:info@oakrootsolutions.com" className="underline hover:text-gray-800">
-                  info@oakrootsolutions.com
+                <a href="mailto:hello@oakrootsolutions.com" className="underline hover:text-gray-800">
+                  hello@oakrootsolutions.com
                 </a>
               </p>
               <Link

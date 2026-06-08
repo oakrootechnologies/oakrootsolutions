@@ -67,7 +67,7 @@ export default function ContactForm() {
     setSubmitStatus('idle');
 
     try {
-      // Save form submission to storage
+      // Save to local storage for admin panel
       saveFormSubmission({
         name: formData.name,
         email: formData.email,
@@ -78,24 +78,32 @@ export default function ContactForm() {
         aboutProduct: formData.aboutProduct,
       });
 
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Fire internal alert + client auto-responder via API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const err = await response.json();
+        throw new Error(err.error || 'Submission failed');
+      }
+
       setSubmitStatus('success');
-      
-      // Reset form after success
-      setTimeout(() => {
-        setFormData({
-          name: '',
-          email: '',
-          contact: '',
-          preferredTime: '',
-          website: '',
-          query: '',
-          aboutProduct: '',
-        });
-        setSubmitStatus('idle');
-      }, 3000);
+
+      // Reset form fields after success, keep success message visible
+      setFormData({
+        name: '',
+        email: '',
+        contact: '',
+        preferredTime: '',
+        website: '',
+        query: '',
+        aboutProduct: '',
+      });
     } catch (error) {
+      console.error('[ContactForm] Submission error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -187,7 +195,7 @@ export default function ContactForm() {
                 htmlFor="email"
                 className="block text-sm font-medium mb-2 transition-colors group-focus-within:text-black"
               >
-                Email <span className="text-red-500">*</span>
+                Work Email <span className="text-red-500">*</span>
               </label>
               <motion.input
                 whileFocus={{ scale: 1.01 }}
@@ -199,7 +207,7 @@ export default function ContactForm() {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-2.5 lg:py-3 bg-transparent border-b-2 border-gray-300 focus:border-black outline-none transition-all duration-300 text-base lg:text-lg placeholder:text-gray-400 focus:placeholder:text-gray-500"
-                placeholder="your.email@example.com"
+                placeholder="you@company.com"
               />
             </motion.div>
           </div>
@@ -386,26 +394,60 @@ export default function ContactForm() {
               </motion.span>
             </motion.button>
 
-            {/* Status Message */}
-            {submitStatus === 'success' && (
-              <motion.p
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mt-4 text-green-600 text-sm"
-              >
-                Thank you! We&apos;ll get back to you soon.
-              </motion.p>
-            )}
+            {/* Error Message */}
             {submitStatus === 'error' && (
               <motion.p
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="mt-4 text-red-600 text-sm"
               >
-                Something went wrong. Please try again.
+                Something went wrong — please try again or email us directly at{' '}
+                <a href="mailto:hello@oakrootsolutions.com" className="underline underline-offset-4">hello@oakrootsolutions.com</a>.
               </motion.p>
             )}
           </motion.div>
+
+          {/* ── Premium Success Confirmation ─────────────────────────── */}
+          {submitStatus === 'success' && (
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="border border-neutral-200 rounded-xl p-8 lg:p-10 mt-8 relative overflow-hidden"
+            >
+              {/* Subtle top accent line */}
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-black" />
+
+              <div className="flex items-start gap-5">
+                {/* Check mark */}
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-black flex items-center justify-center mt-0.5">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M3.5 9.5L7 13L14.5 5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+
+                <div>
+                  <p className="text-xs font-semibold tracking-[0.2em] uppercase text-neutral-400 mb-2">Inquiry Received</p>
+                  <h3 className="text-xl lg:text-2xl font-bold text-black mb-3 leading-snug">
+                    Your inquiry is in the right hands.
+                  </h3>
+                  <p className="text-sm lg:text-base text-neutral-600 leading-relaxed mb-4">
+                    A confirmation has been dispatched to your inbox. A dedicated strategist will
+                    review your submission and reach out within <span className="text-black font-medium">1 business day</span> to schedule your discovery call.
+                  </p>
+                  <p className="text-sm text-neutral-500">
+                    Need an immediate response?{' '}
+                    <a
+                      href="mailto:hello@oakrootsolutions.com"
+                      className="text-black font-medium underline underline-offset-4 hover:opacity-70 transition-opacity"
+                    >
+                      hello@oakrootsolutions.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          )}
         </motion.form>
       </div>
     </motion.div>
