@@ -196,7 +196,7 @@ function Vision() {
 
         <FadeUp delay={0.1}>
           <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 400, color: C.ink, textAlign: 'center', lineHeight: 1.25, maxWidth: 820, margin: '0 auto', letterSpacing: '-0.01em' }}>
-            We don't build chatbots. We engineer intelligent infrastructure that automates your most expensive bottlenecks.
+            We don&apos;t build chatbots. We engineer intelligent infrastructure that automates your most expensive bottlenecks.
           </h2>
         </FadeUp>
       </div>
