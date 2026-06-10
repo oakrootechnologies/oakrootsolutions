@@ -72,7 +72,9 @@ function Hero() {
       {/* Interactive Globe */}
       <div style={{ position: 'absolute', bottom: '-15%', left: '50%', transform: 'translateX(-50%)', width: '100%', maxWidth: 700, aspectRatio: '1 / 1', pointerEvents: 'none' }}>
         <Globe className="top-0" config={{
-          width: 800, height: 800, onRender: () => {},
+          width: 800, height: 800, 
+          // @ts-ignore
+          onRender: () => {},
           devicePixelRatio: 2, phi: 0, theta: 0.3,
           dark: 0, diffuse: 0.5, mapSamples: 16000,
           mapBrightness: 1.3,
